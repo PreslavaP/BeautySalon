@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="bg" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Салон за красота</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Grace & Glow</div>
+            <nav>
+                <a href="#about">За нас</a>
+                <a href="#services">Услуги</a>
+                <a href="#prices">Цени</a>
+                <a href="#contacts">Контакти</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="herp-content">
+            <h1>Маникюр, който изразява твоя стил</h1>
+            <p>Професионална грижа, изящен nail art и дълготраен блясък за твоите ръце.</p>
+            <a href="#booking" class="btn-book">Запази час</a>
+        </div>
+    </section>
+
+    <section id="about" style="padding: 50px; background: #eee; margin: 20px 0;">
+        <h2>За нас</h2>
+        <p>Тук ще има представяне на маникюристката, опит, сертификати и история на салона.</p>
+    </section>
+
+    <section id="services" style="padding: 50px; background: #ddd; margin: 20px 0;">
+        <h2>Услуги</h2>
+        <ul>
+            <li>Маникюр</li>
+            <li>Педикюр</li>
+            <li>Гел лак</li>
+            <li>Nail Art</li>
+        </ul>
+    </section>
+
+    <section id="prices" style="padding: 50px; background: #ccc; margin: 20px 0;">
+        <h2>Цени</h2>
+        <p>Тук ще позиционираме таблицата с ценоразписа.</p>
+    </section>
+
+    <section id="contacts" style="padding: 50px; background: #bbb; margin: 20px 0;">
+        <h2>Контакти</h2>
+        <p>Телефон: 0876 922 083</p>
+        <p>Адрес: гр. София, ул. Примерна 12</p>
+    </section>
+</body>
+</html>
