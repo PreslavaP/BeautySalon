@@ -6,93 +6,84 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <div class="logo">Grace & Glow</div>
-            <nav>
-                <a href="#about">За нас</a>
-                <a href="#services">Услуги</a>
-                <a href="#prices">Цени</a>
-                <a href="#contacts">Контакти</a>
-                <a href="#booking" class="btn-nav-book">Запази час</a>
-            </nav>
+<header>
+    <div class="logo">Grace & Glow</div>
+    <nav>
+        <a href="#about">За нас</a>
+        <a href="#services">Услуги</a>
+        <a href="#prices">Цени</a>
+        <a href="#contacts">Контакти</a>
+        <a href="#booking" class="btn-nav-book">Запази час</a>
+    </nav>
+</header>
+
+<section id="home">
+    <h1>Маникюр, който изразява твоя стил</h1>
+    <p>Професионална грижа, изящен nail art и дълготраен блясък за твоите ръце.</p>
+    <a href="#booking" class="btn-book">Запази час</a>
+</section>
+
+<section id="about">
+    <h2>За нас</h2>
+    <p>Тук ще има представяне на маникюристката, опит, сертификати и история на салона.</p>
+</section>
+
+<section id="services">
+    <h2>Нашите Услуги</h2>
+    <ul>
+        <li th:each="service : ${servicesList}">
+            <div class="service-details">
+                <span class="service-category" th:text="${service.category}">Категория</span>
+                <span class="service-name" th:text="${service.name}">Име</span>
+                <span class="service-duration" th:text="'(' + ${service.duration} + ')'">(Време)</span>
+            </div>
+            <strong th:text="${service.price} + ' лв.'">Цена</strong>
+        </li>
+    </ul>
+</section>
+
+<section id="booking">
+    <h2>Запази своя час</h2>
+    <form th:action="@{/booking}" th:object="${newAppointment}" method="post">
+        <div>
+            <label>Твоето имя:</label>
+            <input type="text" th:field="*{clientName}" required placeholder="Име и фамилия" />
         </div>
-    </header>
-
-    <section class="hero">
-        <div class="herp-content">
-            <h1>Маникюр, който изразява твоя стил</h1>
-            <p>Професионална грижа, изящен nail art и дълготраен блясък за твоите ръце.</p>
-            <a href="#booking" class="btn-book">Запази час</a>
+        <div>
+            <label>Телефон за връзка:</label>
+            <input type="tel" th:field="*{clientPhone}" required placeholder="0888XXXXXX" />
         </div>
-    </section>
+        <div>
+            <label>Избери услуга:</label>
+            <select th:field="*{selectedService}" required>
+                <option value="">-- Избери услуга --</option>
+                <option th:each="service : ${servicesList}"
+                        th:value="${service.name}"
+                        th:text="${service.name} + ' (' + ${service.price} + ' лв.)'">
+                </option>
+            </select>
+        </div>
+        <div>
+            <label>Дата:</label>
+            <input type="date" th:field="*{date}" required />
+        </div>
+        <div>
+            <label>Час:</label>
+            <input type="time" th:field="*{time}" required />
+        </div>
+        <button type="submit" class="btn-book" style="border: none; margin-top: 15px; cursor: pointer;">Изпрати резервация</button>
+    </form>
+</section>
 
-    <section id="about" style="padding: 50px; background: #eee; margin: 20px 0;">
-        <h2>За нас</h2>
-        <p>Тук ще има представяне на маникюристката, опит, сертификати и история на салона.</p>
-    </section>
+<section id="prices">
+    <h2>Цени</h2>
+    <p>Тук ще позиционираме таблицата с ценоразписа.</p>
+</section>
 
-    <section id="services" style="padding: 50px; background: #ddd; margin: 20px 0;">
-        <h2>Нашите Услуги</h2>
-        <ul>
-            <li th:each="service : ${servicesList}">
-                <span th:text="${service.category}">Категория</span>:
-                <span th:text="${service.name}">Име</span>
-                (<span th:text="${service.duration}">Време</span>) -
-                <strong th:text="${service.price} + ' лв.'">Цена</strong>
-            </li>
-        </ul>
-    </section>
-
-    <section id="booking" style="padding: 50px; background: #f9f9f9; margin: 20px 0;">
-        <h2>Запази своя час</h2>
-
-        <form th:action="@{/booking}" th:object="${newAppointment}" method="post">
-
-            <div>
-                <label>Твоето име:</label>
-                <input type="text" th:field="*{clientName}" required placeholder="Име и фамилия" />
-            </div>
-
-            <div>
-                <label>Телефон за връзка:</label>
-                <input type="tel" th:field="*{clientPhone}" required placeholder="0888XXXXXX" />
-            </div>
-
-            <div>
-                <label>Избери услуга:</label>
-                <select th:field="*{selectedService}" required>
-                    <option value="">-- Избери услуга --</option>
-                    <option th:each="service : ${servicesList}"
-                            th:value="${service.name}"
-                            th:text="${service.name} + ' (' + ${service.price} + ' лв.)'">
-                    </option>
-                </select>
-            </div>
-
-            <div>
-                <label>Дата:</label>
-                <input type="date" th:field="*{date}" required />
-            </div>
-
-            <div>
-                <label>Час:</label>
-                <input type="time" th:field="*{time}" required />
-            </div>
-
-            <button type="submit" style="margin-top: 15px; padding: 10px 20px; cursor: pointer;">Изпрати резервация</button>
-        </form>
-    </section>
-
-    <section id="prices" style="padding: 50px; background: #ccc; margin: 20px 0;">
-        <h2>Цени</h2>
-        <p>Тук ще позиционираме таблицата с ценоразписа.</p>
-    </section>
-
-    <section id="contacts" style="padding: 50px; background: #bbb; margin: 20px 0;">
-        <h2>Контакти</h2>
-        <p>Телефон: 0876 922 083</p>
-        <p>Адрес: гр. София, ул. Примерна 12</p>
-    </section>
+<section id="contacts">
+    <h2>Контакти</h2>
+    <p>Телефон: 0876 922 083</p>
+    <p>Адрес: гр. София, ул. Примерна 12</p>
+</section>
 </body>
 </html>
