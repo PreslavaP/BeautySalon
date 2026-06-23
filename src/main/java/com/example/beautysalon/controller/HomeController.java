@@ -1,5 +1,6 @@
 package com.example.beautysalon.controller;
 
+import com.example.beautysalon.model.AppointmentModel;
 import com.example.beautysalon.model.ServiceModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +22,20 @@ public class HomeController {
         services.add(new ServiceModel("Ноктопластика", 60.0, "120 мин.", "Ноктопластика"));
 
         model.addAttribute("servicesList", services);
+        model.addAttribute("newAppointment", new AppointmentModel());
 
         return "index";
+    }
+
+    @org.springframework.web.bind.annotation.PostMapping("/booking")
+    public String bookAppointment(@org.springframework.web.bind.annotation.ModelAttribute("newAppointment") AppointmentModel appointment) {
+
+        System.out.println("--- Нова резервация! ---");
+        System.out.println("Клиент: " + appointment.getClientName());
+        System.out.println("Телефон: " + appointment.getClientPhone());
+        System.out.println("Услуга: " + appointment.getSelectedService());
+        System.out.println("Дата и час: " + appointment.getDate() + " в " + appointment.getTime());
+
+        return "redirect:/";
     }
 }
