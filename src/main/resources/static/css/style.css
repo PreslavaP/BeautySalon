@@ -152,10 +152,6 @@ section {
     border-bottom: 1px dashed #e6dbd1;
 }
 
-#services li span {
-    color: #5c443c;
-}
-
 #services .service-details {
     display: flex;
     gap: 10px;
@@ -182,6 +178,7 @@ section {
     font-size: 14px;
     font-style: italic;
 }
+
 #services li strong {
     color: #6f4e37;
     font-size: 18px;
@@ -241,4 +238,121 @@ section {
     margin-top: 10px;
     width: 100%;
     max-width: 250px;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+.about-text h2 {
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #5c443c;
+    margin-bottom: 15px;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-placeholder {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    background-color: #f4e6dc;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6f4e37;
+    font-weight: 500;
+    border: 2px dashed #e6dbd1;
+}
+
+.prices-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.prices-table th {
+    background-color: #6f4e37;
+    color: #ffffff;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.prices-table td {
+    padding: 15px;
+    border-bottom: 1px solid #faf6f0;
+    color: #3e2723;
+}
+
+.prices-table tr:last-child td {
+    border-bottom: none;
+}
+
+.prices-table tr:nth-child(even) {
+    background-color: #faf6f0;
+}
+
+.contacts-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.contact-card {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    border: 1px solid #e6dbd1;
+}
+
+.contact-card h3 {
+    color: #6f4e37;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.contact-card p {
+    color: #5c443c;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.about-profile-img {
+    width: 100%;
+    max-width: 450px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(111, 78, 55, 0.1);
 }
