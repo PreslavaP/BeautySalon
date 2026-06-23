@@ -35,7 +35,9 @@
         <h2>Нашите Услуги</h2>
         <ul>
             <li th:each="service : ${servicesList}">
-                <span th:text="${service.name}">Име</span> -
+                <span th:text="${service.category}">Категория</span>:
+                <span th:text="${service.name}">Име</span>
+                (<span th:text="${service.duration}">Време</span>) -
                 <strong th:text="${service.price} + ' лв.'">Цена</strong>
             </li>
         </ul>

@@ -15,10 +15,10 @@ public class HomeController {
     public String home(Model model) {
         List<ServiceModel> services = new ArrayList<>();
 
-        services.add(new ServiceModel("Класически маникюр", 30.0));
-        services.add(new ServiceModel("Педикюр", 45.0));
-        services.add(new ServiceModel("Гел лак", 40.0));
-        services.add(new ServiceModel("Ноктопластика", 60.0));
+        services.add(new ServiceModel("Класически маникюр", 30.0, "45 мин.", "Маникюр"));
+        services.add(new ServiceModel("Педикюр", 45.0, "60 мин.", "Педикюр"));
+        services.add(new ServiceModel("Гел лак", 40.0, "50 мин.", "Маникюр"));
+        services.add(new ServiceModel("Ноктопластика", 60.0, "120 мин.", "Ноктопластика"));
 
         model.addAttribute("servicesList", services);
 
