@@ -9,18 +9,21 @@
 <header>
     <div class="logo">Grace & Glow</div>
     <nav>
+        <a href="#home">Начало</a>
         <a href="#about">За нас</a>
         <a href="#services">Услуги</a>
-        <a href="#prices">Цени</a>
+        <a href="#prices">Ценоразпис</a>
         <a href="#contacts">Контакти</a>
-        <a href="#booking" class="btn-nav-book">Запази час</a>
+        <a th:href="@{/login}" class="link-login">Вход</a>
+        <a th:href="@{/register}" class="link-register">Регистрация</a>
+        <a th:href="@{/login}" class="btn-nav-book">Запази час</a>
     </nav>
 </header>
 
 <section id="home">
     <h1>Маникюр, който изразява твоя стил</h1>
     <p>Професионална грижа, изящен nail art и дълготраен блясък за твоите ръце.</p>
-    <a href="#booking" class="btn-book">Запази час</a>
+    <a th:href="@{/login}" class="btn-book">Запази час</a>
 </section>
 
 <section id="about">
@@ -48,39 +51,6 @@
             <strong th:text="${service.price} + ' лв.'">Цена</strong>
         </li>
     </ul>
-</section>
-
-<section id="booking">
-    <h2>Запази своя час</h2>
-    <form th:action="@{/booking}" th:object="${newAppointment}" method="post">
-        <div>
-            <label>Твоето име:</label>
-            <input type="text" th:field="*{clientName}" required placeholder="Име и фамилия" />
-        </div>
-        <div>
-            <label>Телефон за връзка:</label>
-            <input type="tel" th:field="*{clientPhone}" required placeholder="0888XXXXXX" />
-        </div>
-        <div>
-            <label>Избери услуга:</label>
-            <select th:field="*{selectedService}" required>
-                <option value="">-- Избери услуга --</option>
-                <option th:each="service : ${servicesList}"
-                        th:value="${service.name}"
-                        th:text="${service.name} + ' (' + ${service.price} + ' лв.)'">
-                </option>
-            </select>
-        </div>
-        <div>
-            <label>Дата:</label>
-            <input type="date" th:field="*{date}" required />
-        </div>
-        <div>
-            <label>Час:</label>
-            <input type="time" th:field="*{time}" required />
-        </div>
-        <button type="submit" class="btn-book" style="border: none; margin-top: 15px; cursor: pointer;">Изпрати резервация</button>
-    </form>
 </section>
 
 <section id="prices">

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="bg" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Запази час - Grace & Glow</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="login-wrapper">
+    <div class="booking-box" id="booking" style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 4px 25px rgba(111, 78, 55, 0.08); width: 100%; max-width: 500px; border: 1px solid #e6dbd1;">
+        <h2 style="text-align: center; color: #6f4e37; margin-bottom: 30px;">Запази своя час</h2>
+        <form th:action="@{/booking}" method="post" style="display: flex; flex-direction: column; gap: 20px;">
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="font-weight: 600; color: #5c443c; font-size: 14px;">Избери услуга:</label>
+                <select name="selectedService" th:th:id="selectedService" required style="padding: 12px; border: 1px solid #e6dbd1; border-radius: 8px; background-color: #faf6f0; color: #3e2723;">
+                    <option value="">-- Избери услуга --</option>
+                    <option th:each="service : ${servicesList}"
+                            th:value="${service.name}"
+                            th:text="${service.name} + ' (' + ${service.price} + ' лв.)'">
+                    </option>
+                </select>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="font-weight: 600; color: #5c443c; font-size: 14px;">Дата:</label>
+                <input type="date" name="date" required style="padding: 12px; border: 1px solid #e6dbd1; border-radius: 8px; background-color: #faf6f0; color: #3e2723;" />
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="font-weight: 600; color: #5c443c; font-size: 14px;">Час:</label>
+                <input type="time" name="time" required style="padding: 12px; border: 1px solid #e6dbd1; border-radius: 8px; background-color: #faf6f0; color: #3e2723;" />
+            </div>
+            <button type="submit" class="btn-book" style="border: none; margin-top: 15px; cursor: pointer; width: 100%;">Изпрати резервация</button>
+        </form>
+        <div style="text-align: center; margin-top: 20px;">
+            <a th:href="@{/}" style="color: #8c736c; text-decoration: none; font-size: 14px;">← Назад към началната страница</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
