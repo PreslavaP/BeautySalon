@@ -1,360 +1,89 @@
+/* --- 1. ГЛОБАЛНИ НАСТРОЙКИ & ЦВЕТОВЕ --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
 }
 
-body {
+html, body {
     background-color: #faf6f0;
     color: #3e2723;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;
+}
+
+h2 {
+    font-size: 32px;
+    color: #5c443c;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #8c736c;
+    font-size: 16px;
+    margin-bottom: 45px;
+}
+
+section {
+    padding: 140px 10% 80px 10%;
+    min-height: auto;
+    display: block;
+}
+
+/* --- 2. НАВИГАЦИЯ (HEADER) --- */
 header {
-    background-color: #ffffff;
-    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 15px rgba(111, 78, 55, 0.05);
-    position: sticky;
+    padding: 20px 8%;
+    background-color: rgba(255, 255, 255, 0.95);
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 15px rgba(111, 78, 55, 0.05);
 }
 
-.logo {
-    font-weight: 700;
+header .logo {
     font-size: 24px;
+    font-weight: 700;
     color: #6f4e37;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 nav {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
 }
 
 nav a {
     text-decoration: none;
     color: #5c443c;
     font-weight: 500;
-    transition: color 0.3s ease;
+    font-size: 15px;
+    transition: color 0.3s;
 }
 
 nav a:hover {
     color: #6f4e37;
 }
 
-nav .btn-nav-book {
-    background-color: #6f4e37;
-    color: #ffffff !important;
-    padding: 10px 22px;
-    border-radius: 25px;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-nav .btn-nav-book:hover {
-    background-color: #5a3d2a;
-    transform: translateY(-1px);
-}
-
-section {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 20px;
-}
-
-#home {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(135deg, #faf6f0 0%, #f4e6dc 100%);
-    border-radius: 20px;
-    margin-top: 40px;
-}
-
-#home h1 {
-    font-size: 42px;
-    color: #3e2723;
-    margin-bottom: 15px;
-}
-
-#home p {
-    font-size: 18px;
-    color: #5c443c;
-    margin-bottom: 30px;
-}
-
-#home a, .btn-book {
-    display: inline-block;
-    background-color: #6f4e37;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 15px 35px;
-    font-weight: 600;
-    font-size: 16px;
-    border-radius: 30px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 15px rgba(111, 78, 55, 0.15);
-}
-
-#home a:hover, .btn-book:hover {
-    background-color: #5a3d2a;
-    transform: translateY(-2px);
-}
-
-#about {
-    text-align: center;
-    max-width: 800px;
-}
-
-#about h2 {
-    font-size: 32px;
-    color: #6f4e37;
-    margin-bottom: 20px;
-}
-
-#about p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #5c443c;
-}
-
-#services {
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-}
-
-#services h2 {
-    text-align: center;
-    font-size: 32px;
-    color: #6f4e37;
-    margin-bottom: 30px;
-}
-
-#services ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-#services li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 10px;
-    border-bottom: 1px dashed #e6dbd1;
-}
-
-#services .service-details {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-#services .service-category {
-    background-color: #f4e6dc;
-    color: #6f4e37;
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: 3px 8px;
-    border-radius: 5px;
-}
-
-#services .service-name {
-    font-weight: 500;
-    color: #3e2723;
-}
-
-#services .service-duration {
-    color: #8c736c;
-    font-size: 14px;
-    font-style: italic;
-}
-
-#services li strong {
-    color: #6f4e37;
-    font-size: 18px;
-    white-space: nowrap;
-}
-
-#booking {
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(111, 78, 55, 0.05);
-    max-width: 600px;
-    margin: 60px auto;
-}
-
-#booking h2 {
-    text-align: center;
-    color: #6f4e37;
-    margin-bottom: 30px;
-}
-
-#booking form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-#booking form div {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-#booking label {
-    font-weight: 600;
-    color: #5c443c;
-    font-size: 14px;
-}
-
-#booking input, #booking select {
-    padding: 12px 15px;
-    border: 1px solid #e6dbd1;
-    border-radius: 8px;
-    background-color: #faf6f0;
-    color: #3e2723;
-    font-size: 15px;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
-
-#booking input:focus, #booking select:focus {
-    border-color: #6f4e37;
-}
-
-#booking button {
-    align-self: center;
-    margin-top: 10px;
-    width: 100%;
-    max-width: 250px;
-}
-
-.about-container {
+.auth-buttons {
     display: flex;
     align-items: center;
-    gap: 50px;
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-}
-
-.about-text {
-    flex: 1;
-    text-align: left;
-}
-
-.about-text h2 {
-    margin-bottom: 20px;
-}
-
-.about-text p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #5c443c;
-    margin-bottom: 15px;
-}
-
-.about-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.image-placeholder {
-    width: 100%;
-    max-width: 400px;
-    height: 300px;
-    background-color: #f4e6dc;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #6f4e37;
-    font-weight: 500;
-    border: 2px dashed #e6dbd1;
-}
-
-.prices-table {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    border-collapse: collapse;
-    background-color: #ffffff;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-}
-
-.prices-table th {
-    background-color: #6f4e37;
-    color: #ffffff;
-    padding: 15px;
-    text-align: left;
-    font-weight: 600;
-}
-
-.prices-table td {
-    padding: 15px;
-    border-bottom: 1px solid #faf6f0;
-    color: #3e2723;
-}
-
-.prices-table tr:last-child td {
-    border-bottom: none;
-}
-
-.prices-table tr:nth-child(even) {
-    background-color: #faf6f0;
-}
-
-.contacts-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.contact-card {
-    flex: 1;
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-    border: 1px solid #e6dbd1;
-}
-
-.contact-card h3 {
-    color: #6f4e37;
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-
-.contact-card p {
-    color: #5c443c;
-    font-size: 15px;
-    line-height: 1.5;
-}
-
-.about-profile-img {
-    width: 100%;
-    max-width: 450px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(111, 78, 55, 0.1);
+    gap: 15px;
+    margin-left: 15px;
 }
 
 nav .link-login {
@@ -384,6 +113,518 @@ nav .link-register:hover {
     background-color: #6f4e37;
 }
 
+.btn-nav-book {
+    background-color: #6f4e37;
+    color: #fff !important;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.btn-nav-book:hover {
+    background-color: #5c443c;
+}
+
+/* --- МОБИЛНО БУРГЕР МЕНЮ --- */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: #5c443c;
+    font-size: 30px;
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+}
+
+@media (max-width: 992px) {
+    .hamburger {
+        display: block !important;
+        position: relative;
+        z-index: 2000 !important;
+    }
+
+    nav {
+        display: flex !important;
+        flex-direction: column;
+        position: fixed !important;
+        top: 0;
+        right: 0;
+        width: 280px;
+        height: 100vh;
+        background-color: #ffffff !important;
+        padding: 100px 30px 40px 30px;
+        gap: 25px;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+        z-index: 1500 !important;
+
+        transform: translateX(100%);
+        opacity: 0;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+        pointer-events: none;
+    }
+
+    nav.active {
+        transform: translateX(0) !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+        margin-left: 0;
+        width: 100%;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .auth-buttons a, .btn-nav-book {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* --- 3. НАЧАЛЕН ЕКРАН (HERO) --- */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(243, 234, 225, 0.7), rgba(243, 234, 225, 0.4)), url('https://images.unsplash.com/photo-1604654894610-df490651e56c?q=80&w=1920') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 8%;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    color: #3e2723;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #5c443c;
+    margin-bottom: 35px;
+}
+
+.btn-book {
+    display: inline-block;
+    background-color: #6f4e37;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(111, 78, 55, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-book:hover {
+    background-color: #5c443c;
+    transform: translateY(-2px);
+}
+
+/* --- 4. ЗА НАС (ABOUT) --- */
+.about-section {
+    background-color: #ffffff;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    color: #5c443c;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.image-placeholder {
+    height: 350px;
+    background-color: #faf6f0;
+    border: 2px dashed #e6dbd1;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8c736c;
+    font-style: italic;
+}
+
+/* --- 5. УСЛУГИ (SERVICES) --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgba(230, 219, 209, 0.5);
+    box-shadow: 0 5px 20px rgba(111, 78, 55, 0.02);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card i {
+    font-size: 35px;
+    color: #b59b85;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: #5c443c;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #7c645c;
+}
+
+/* --- 6. ЦЕНОРАЗПИС (PRICES) --- */
+.prices-section {
+    background-color: #ffffff;
+}
+
+.table-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #faf6f0;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.price-table th, .price-table td {
+    padding: 18px 25px;
+    text-align: left;
+}
+
+.price-table th {
+    background-color: #6f4e37;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.price-table tr {
+    border-bottom: 1px solid #e6dbd1;
+}
+
+.price-table tr:last-child {
+    border-bottom: none;
+}
+
+.price-table td i {
+    color: #a69285;
+    margin-right: 5px;
+}
+
+.price-val {
+    font-weight: 600;
+    color: #6f4e37;
+}
+
+/* --- 7. ГАЛЕРИЯ (GALLERY) --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    border-radius: 16px;
+    overflow: hidden;
+    height: 280px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.gallery-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border: 1px solid #e6dbd1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #a69285;
+    font-size: 14px;
+}
+
+/* --- 8. ОТЗИВИ (REVIEWS) --- */
+.reviews-section {
+    background-color: #ffffff;
+}
+
+.reviews-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.review-card {
+    background-color: #faf6f0;
+    padding: 35px;
+    border-radius: 20px;
+    max-width: 450px;
+    flex: 1;
+    min-width: 300px;
+}
+
+.stars {
+    color: #ffb100;
+    margin-bottom: 15px;
+}
+
+.review-text {
+    font-style: italic;
+    color: #5c443c;
+    margin-bottom: 15px;
+}
+
+.review-author {
+    font-weight: 600;
+    color: #6f4e37;
+    display: block;
+}
+
+/* --- 9. ПАРТНЬОРИ (PARTNERS) --- */
+.partners-section {
+    padding: 40px 10%;
+    background-color: #f3eae1;
+    text-align: center;
+}
+
+.partners-section h3 {
+    font-size: 16px;
+    color: #8c736c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.partners-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.partner-brand {
+    font-size: 22px;
+    font-weight: 700;
+    color: #a69285;
+    letter-spacing: 1px;
+}
+
+/* --- 10. КОНТАКТИ & ФУТЪР --- */
+.contacts-section {
+    background-color: #3e2723;
+    color: #decbc0;
+    padding: 80px 8% 30px 8%;
+}
+
+.contacts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.contact-info-block .footer-logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.studio-desc {
+    margin-bottom: 25px;
+    color: #ba9e93;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.info-item i {
+    color: #d1b4a6;
+}
+
+.work-hours {
+    margin-top: 30px;
+}
+
+.work-hours h4 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.work-hours p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #6f4e37;
+}
+
+.contact-form-block h4, .contact-map-block h4 {
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+.qa-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.qa-form input, .qa-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    outline: none;
+    font-family: inherit;
+}
+
+.qa-form input::placeholder, .qa-form textarea::placeholder {
+    color: #8c736c;
+}
+
+.qa-form input:focus, .qa-form textarea:focus {
+    border-color: #6f4e37;
+}
+
+.btn-submit-qa {
+    background-color: #6f4e37;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-submit-qa:hover {
+    background-color: #5c443c;
+}
+
+.map-placeholder {
+    height: 220px;
+    background-color: rgba(255,255,255,0.03);
+    border: 1px dashed rgba(255,255,255,0.1);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    padding: 20px;
+}
+
+.map-placeholder i {
+    font-size: 30px;
+    color: #d1b4a6;
+}
+
+.map-mock-btn {
+    font-size: 12px;
+    background-color: rgba(255,255,255,0.1);
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #ba9e93;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.legal-links a {
+    color: #ba9e93;
+    text-decoration: none;
+}
+
+.legal-links a:hover {
+    color: #ffffff;
+}
+
+.divider {
+    margin: 0 8px;
+    color: rgba(255,255,255,0.1);
+}
+
+/* --- 11. СТИЛИЗИРАНЕ НА ВХОД, РЕГИСТРАЦИЯ И ЗАПАЗВАНЕ НА ЧАС (FORMS) --- */
+
+/* Контейнерът, който центрира формата на отделните страници */
 .login-wrapper {
     display: flex;
     justify-content: center;
@@ -391,10 +632,11 @@ nav .link-register:hover {
     min-height: 100vh;
     background: linear-gradient(135deg, #faf6f0 0%, #f3eae1 100%);
     padding: 20px;
-    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-.login-box {
+/* Основната кутия на формата */
+.login-box, .booking-box {
     background-color: #ffffff;
     padding: 50px 40px;
     border-radius: 24px;
@@ -405,12 +647,17 @@ nav .link-register:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.login-box:hover {
+/* Малко по-широка кутия за формата за резервации за по-добра четимост */
+.booking-box {
+    max-width: 500px !important;
+}
+
+.login-box:hover, .booking-box:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(111, 78, 55, 0.08);
 }
 
-.login-box h2 {
+.login-box h2, .booking-box h2 {
     color: #5c443c;
     margin-bottom: 35px;
     font-size: 28px;
@@ -435,7 +682,8 @@ nav .link-register:hover {
     letter-spacing: 0.5px;
 }
 
-.login-box input {
+/* Входове и селектори за всички форми */
+.login-box input, .booking-box input, .booking-box select {
     padding: 14px 16px;
     border: 1px solid #e6dbd1;
     border-radius: 12px;
@@ -443,10 +691,11 @@ nav .link-register:hover {
     color: #3e2723;
     font-size: 15px;
     outline: none;
+    width: 100%;
     transition: all 0.3s ease;
 }
 
-.login-box input:focus {
+.login-box input:focus, .booking-box input:focus, .booking-box select:focus {
     border-color: #b59b85;
     background-color: #ffffff;
     box-shadow: 0 0 0 4px rgba(181, 155, 133, 0.15);
@@ -457,7 +706,8 @@ nav .link-register:hover {
     font-size: 14px;
 }
 
-.login-box .btn-book {
+/* Главните бутони вътре във формите */
+.login-box .btn-book, .booking-box .btn-book {
     margin-top: 15px;
     width: 100%;
     padding: 14px;
@@ -468,20 +718,18 @@ nav .link-register:hover {
     font-weight: 600;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+    text-align: center;
     box-shadow: 0 5px 15px rgba(111, 78, 55, 0.15);
+    transition: all 0.3s ease;
 }
 
-.login-box .btn-book:hover {
+.login-box .btn-book:hover, .booking-box .btn-book:hover {
     background-color: #5c443c;
     box-shadow: 0 8px 20px rgba(111, 78, 55, 0.25);
     transform: translateY(-1px);
 }
 
-.login-box .btn-book:active {
-    transform: translateY(1px);
-}
-
+/* Долна част под формите (Линкове за прехвърляне) */
 .login-footer {
     margin-top: 30px;
     display: flex;
@@ -518,4 +766,8 @@ nav .link-register:hover {
 .login-footer .back-link:hover {
     color: #6f4e37;
     text-decoration: none;
+}
+
+#contacts {
+    min-height: auto;
 }

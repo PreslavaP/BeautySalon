@@ -2,107 +2,259 @@
 <html lang="bg" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Салон за красота</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grace & Glow - Салон за красота</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
 <header>
     <div class="logo">Grace & Glow</div>
-    <nav>
-        <a href="#home">Начало</a>
-        <a href="#about">За нас</a>
-        <a href="#services">Услуги</a>
-        <a href="#prices">Ценоразпис</a>
-        <a href="#contacts">Контакти</a>
-        <a th:href="@{/login}" class="link-login">Вход</a>
-        <a th:href="@{/register}" class="link-register">Регистрация</a>
-        <a th:href="@{/login}" class="btn-nav-book">Запази час</a>
+    <nav id="nav-menu">
+        <a href="#home" onclick="document.getElementById('nav-menu').classList.remove('active')">Начало</a>
+        <a href="#about" onclick="document.getElementById('nav-menu').classList.remove('active')">За нас</a>
+        <a href="#services" onclick="document.getElementById('nav-menu').classList.remove('active')">Услуги</a>
+        <a href="#prices" onclick="document.getElementById('nav-menu').classList.remove('active')">Ценоразпис</a>
+        <a href="#gallery" onclick="document.getElementById('nav-menu').classList.remove('active')">Галерия</a>
+        <a href="#reviews" onclick="document.getElementById('nav-menu').classList.remove('active')">Отзиви</a>
+        <a href="#contacts" onclick="document.getElementById('nav-menu').classList.remove('active')">Контакти</a>
+
+        <span class="auth-buttons">
+                <a th:href="@{/login}" class="link-login">Вход</a>
+                <a th:href="@{/register}" class="link-register">Регистрация</a>
+                <a th:href="@{/login}" class="btn-nav-book">Запази час</a>
+            </span>
     </nav>
+
+    <button class="hamburger" id="hamburger-btn" type="button" onclick="document.getElementById('nav-menu').classList.toggle('active')">&#9776;</button>
 </header>
 
-<section id="home">
-    <h1>Маникюр, който изразява твоя стил</h1>
-    <p>Професионална грижа, изящен nail art и дълготраен блясък за твоите ръце.</p>
-    <a th:href="@{/login}" class="btn-book">Запази час</a>
+<section id="home" class="hero-section">
+    <div class="hero-content">
+        <h1>Изящество и стил за твоите нокти</h1>
+        <p>Подари си професионална грижа и дълготраен блясък в уютна атмосфера.</p>
+        <a th:href="@{/login}" class="btn-book">Запази час</a>
+    </div>
 </section>
 
-<section id="about">
+<section id="about" class="about-section">
     <div class="about-container">
         <div class="about-text">
-            <h2>За нас</h2>
-            <p>Добре дошли в Grace & Glow – мястото, където грижата за вашите ръце се превръща в изкуство. Казвам се Стелиана и съм професионален маникюрист с дългогодишен опит и страст към детайлите.</p>
-            <p>В салона се залага на безкомпромисна хигиена, висококачествени материали и индивидуално творчество за всеки клиент. Тук ще откриете уютна атмосфера, в която да релаксирате, докато вашите нокти получават перфектния си и дълготраен блясък.</p>
+            <h2>Нашата История</h2>
+            <p>Добре дошли в Grace & Glow – мястото, където изкуството среща грижата за ноктите. Аз вярвам, че маникюрът не е просто процедура, а начин да изразиш себе си и да си подариш заслужено самочувствие.</p>
+            <p>Работя изключително с висококачествени и сертифицирани материали, като следя най-новите тенденции в дизайна и здравето на нокътната плочка.</p>
         </div>
         <div class="about-image">
-            <img th:src="@{/images/Steliana.jpg}" alt="Преслава - Маникюрист" class="about-profile-img">
+            <img th:src="@{/images/Steliana.jpg}" alt="Стелиана Петрова" style="width: 100%; border-radius: 20px; box-shadow: 0 5px 20px rgba(111,78,55,0.1);">
         </div>
     </div>
 </section>
 
-<section id="services">
-    <h2>Нашите Услуги</h2>
-    <ul>
-        <li th:each="service : ${servicesList}">
-            <div class="service-details">
-                <span class="service-category" th:text="${service.category}">Категория</span>
-                <span class="service-name" th:text="${service.name}">Име</span>
-                <span class="service-duration" th:text="'(' + ${service.duration} + ')'">(Време)</span>
-            </div>
-            <strong th:text="${service.price} + ' лв.'">Цена</strong>
-        </li>
-    </ul>
+<section id="services" class="services-section">
+    <h2>Какво предлагаме</h2>
+    <p class="section-subtitle">Професионални процедури, съобразени с твоите нужди</p>
+    <div class="services-grid">
+        <div class="service-card">
+            <i class="fa-solid fa-hand-sparkles"></i>
+            <h3>Комбиниран / Апаратен маникюр с гел лак</h3>
+            <p>Прецизно почистване и дълготрайно покритие с богат избор от цветове.</p>
+        </div>
+        <div class="service-card">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Маникюр с укрепване</h3>
+            <p>Укрепване с каучукова база и гел лак за максимална здравина.</p>
+        </div>
+        <div class="service-card">
+            <i class="fa-solid fa-gem"></i>
+            <h3>Ноктопластика / Поддръжка</h3>
+            <p>Изграждане и поддръжка с гел, акригел или акрил върху естествен нокът.</p>
+        </div>
+        <div class="service-card">
+            <i class="fa-solid fa-palette"></i>
+            <h3>Вграден дизайн и декорации</h3>
+            <p>Френски, омбре, детайлна рисунка, бърз салонен дизайн, камъни и релефна декорация.</p>
+        </div>
+    </div>
 </section>
 
-<section id="prices">
+<section id="prices" class="prices-section">
     <h2>Ценоразпис</h2>
-    <table class="prices-table">
-        <thead>
-        <tr>
-            <th>Процедура</th>
-            <th>Времетраене</th>
-            <th>Цена</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Сваляне на гел лак</td>
-            <td>20 мин.</td>
-            <td>10.00 лв.</td>
-        </tr>
-        <tr>
-            <td>Изграждане с гел (допълнително)</td>
-            <td>30 мин.</td>
-            <td>20.00 лв.</td>
-        </tr>
-        <tr>
-            <td>Поправка на един нокът</td>
-            <td>15 мин.</td>
-            <td>5.00 лв.</td>
-        </tr>
-        <tr>
-            <td>Декорация / Nail Art (на нокът)</td>
-            <td>10 мин.</td>
-            <td>2.00 лв.</td>
-        </tr>
-        </tbody>
-    </table>
+    <p class="section-subtitle">Грижа за вашите ръце с професионални материали</p>
+    <div class="table-container">
+        <table class="price-table">
+            <thead>
+            <tr>
+                <th>Процедура</th>
+                <th>Детайли / Размер</th>
+                <th>Цена</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Комбиниран / Апаратен маникюр с гел лак</td>
+                <td><i class="fa-regular fa-clock"></i> Стандартно време</td>
+                <td class="price-val">15.00 €</td>
+            </tr>
+            <tr>
+                <td>Маникюр с укрепване с каучукова база и гел лак</td>
+                <td><i class="fa-regular fa-clock"></i> За допълнителна здравина</td>
+                <td class="price-val">18.00 €</td>
+            </tr>
+            <tr>
+                <td>Ноктопластика/Поддръжка с гел и гел лак върху естествен нокът</td>
+                <td><i class="fa-regular fa-clock"></i> Дълготрайна грижа</td>
+                <td class="price-val">20.00 €</td>
+            </tr>
+            <tr>
+                <td>Ноктопластика/Поддръжка с акригел/акрил и гел лак върху естествен нокът</td>
+                <td><i class="fa-regular fa-clock"></i> Максимална устойчивост</td>
+                <td class="price-val">25.00 €</td>
+            </tr>
+            <tr style="border-bottom: none;">
+                <td rowspan="4">Маникюр с изграждане (гел / акригел / акрил и гел лак)</td>
+                <td> Размер S</td>
+                <td class="price-val">35.00 €</td>
+            </tr>
+            <tr style="border-bottom: none;">
+                <td> Размер M</td>
+                <td class="price-val">38.00 €</td>
+            </tr>
+            <tr style="border-bottom: none;">
+                <td> Размер L</td>
+                <td class="price-val">41.00 €</td>
+            </tr>
+            <tr>
+                <td> Размер XL</td>
+                <td class="price-val">44.00 €</td>
+            </tr>
+            <tr>
+                <td>Ноктопластика с вграден дизайн</td>
+                <td>Цената варира</td>
+                <td class="price-val">По договаряне</td>
+            </tr>
+            <tr>
+                <td>Поправка на нокът</td>
+                <td>Единична услуга</td>
+                <td class="price-val">5.00 €</td>
+            </tr>
+            <tr>
+                <td>Декорация на нокът <br><small style="color: #8c736c;">(френски, омбре, детайлна рисунка, бърз салонен дизайн, камъни, релефна декорация, вградена декорация)</small></td>
+                <td>Калкулира се отделно!</td>
+                <td class="price-val">0.50 € - 5.00 €</td>
+            </tr>
+            <tr>
+                <td>Сваляне на материал и комбиниран/апаратен маникюр</td>
+                <td>Пълно почистване</td>
+                <td class="price-val">7.00 €</td>
+            </tr>
+            <tr>
+                <td>Класически маникюр</td>
+                <td>Комбиниран или апаратен според преценка</td>
+                <td class="price-val">5.00 €</td>
+            </tr>
+            </tbody>
+        </table>
+        <p style="text-align: center; margin-top: 20px; font-size: 13px; color: #8c736c; font-style: italic;">
+            * Цените са изчислени по фиксиран курс 1 EUR = 1.95583 BGN. Услугите са строго индивидуални за всеки клиент!
+        </p>
+    </div>
 </section>
 
-<section id="contacts">
-    <h2>Контакти</h2>
-    <div class="contacts-grid">
-        <div class="contact-card">
-            <h3>Телефон</h3>
-            <p>0876 922 083</p>
+<section id="gallery" class="gallery-section">
+    <h2>Галерия</h2>
+    <p class="section-subtitle">Част от нашите изработени дизайни</p>
+    <div class="gallery-grid">
+        <div class="gallery-item"><div class="gallery-placeholder">Снимка Процедура 1</div></div>
+        <div class="gallery-item"><div class="gallery-placeholder">Снимка Процедура 2</div></div>
+        <div class="gallery-item"><div class="gallery-placeholder">Снимка Процедура 3</div></div>
+        <div class="gallery-item"><div class="gallery-placeholder">Снимка Процедура 4</div></div>
+    </div>
+</section>
+
+<section id="reviews" class="reviews-section">
+    <h2>Отзиви от клиенти</h2>
+    <p class="section-subtitle">Какво казват момичетата за Grace & Glow</p>
+    <div class="reviews-grid">
+        <div class="review-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"Най-добрата маникюристка! Гел лакът ми издържа цял месец без нито едно обелено парченце. Атмосферата е супер приятна!"</p>
+            <span class="review-author">- Мария П.</span>
         </div>
-        <div class="contact-card">
-            <h3>Адрес</h3>
-            <p>гр. София, ул. Примерна 12</p>
+        <div class="review-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"Изключително прецизна работа и страхотно отношение към детайла. Декорациите се рисуват на ръка и са истински шедьовър."</p>
+            <span class="review-author">- Елена К.</span>
         </div>
-        <div class="contact-card">
-            <h3>Работно време</h3>
-            <p>Пон - Съб: 09:00 - 19:00</p>
-            <p>Неделя: Почивен ден</p>
+    </div>
+</section>
+
+<section class="partners-section">
+    <h3>Работим с професионални брандове:</h3>
+    <div class="partners-logos">
+        <span class="partner-brand">OPI</span>
+        <span class="partner-brand">Gelish</span>
+        <span class="partner-brand">CND Shellac</span>
+        <span class="partner-brand">Kodi Professional</span>
+    </div>
+</section>
+
+<section id="contacts" class="contacts-section">
+    <div class="contacts-container">
+
+        <div class="contact-info-block">
+            <div class="footer-logo">Grace & Glow</div>
+            <p class="studio-desc">Студио за професионален маникюр и естетика.</p>
+
+            <div class="info-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>+359 877 366 448</span>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>info@graceandglow.com</span>
+            </div>
+
+            <div class="work-hours">
+                <h4><i class="fa-solid fa-calendar-days"></i> Работно време</h4>
+                <p>Понеделник - Петък: 09:00 - 19:00</p>
+                <p>Събота: 10:00 - 16:00</p>
+                <p>Неделя: Почивен ден</p>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=100038914457753&locale=bg_BG" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ssttuuddiiooss/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="contact-form-block">
+            <h4>Задайте въпрос</h4>
+            <form action="#" method="post" class="qa-form">
+                <input type="text" placeholder="Вашето име" required>
+                <input type="email" placeholder="Вашият Имейл" required>
+                <textarea placeholder="Вашият въпрос..." rows="4" required></textarea>
+                <button type="submit" class="btn-submit-qa">Изпрати</button>
+            </form>
+        </div>
+
+        <div class="contact-map-block">
+            <h4>Къде да ни намерите</h4>
+            <div class="map-placeholder">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>гр. София, ул. "Красота" №15</p>
+                <span class="map-mock-btn">Виж в Google Maps</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Grace & Glow. Всички права запазени.</p>
+        <div class="legal-links">
+            <a href="#">Политика за лични данни</a>
+            <span class="divider">|</span>
+            <a href="#">Общи условия</a>
         </div>
     </div>
 </section>
