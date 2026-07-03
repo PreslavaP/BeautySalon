@@ -31,10 +31,24 @@
 </header>
 
 <section id="home" class="hero-section">
-    <div class="hero-content">
-        <h1>Изящество и стил за твоите нокти</h1>
-        <p>Подари си професионална грижа и дълготраен блясък в уютна атмосфера.</p>
-        <a th:href="@{/login}" class="btn-book">Запази час</a>
+    <div class="hero-wrapper">
+        <div class="hero-content">
+            <h1>Изящество и стил за твоите нокти</h1>
+            <p>Подари си професионална грижа, изящни арт дизайни и дълготраен блясък в уютна и релаксираща атмосфера.</p>
+            <a th:href="@{/login}" class="btn-hero-book">Запази час</a>
+        </div>
+
+        <div class="hero-floating-art">
+            <div class="aesthetic-card card-1">
+                <img th:src="@{/images/nailpolish.jpg}" alt="Професионален гел лак">
+            </div>
+
+            <div class="aesthetic-card card-2">
+                <img th:src="@{/images/nails.jpg}" alt="Изящен чист маникюр">
+            </div>
+
+            <div class="aesthetic-card card-3"></div>
+        </div>
     </div>
 </section>
 
@@ -160,15 +174,132 @@
         </p>
     </div>
 </section>
-
 <section id="gallery" class="gallery-section">
     <h2>Галерия</h2>
-    <p class="section-subtitle">Част от нашите изработени дизайни</p>
+    <p class="section-subtitle">Посочете снимка, за да научите повече за процедурата</p>
+
     <div class="gallery-grid">
-        <div class="gallery-item"><div class="gallery-placeholder">Снимка Процедура 1</div></div>
-        <div class="gallery-item"><div class="gallery-placeholder">Снимка Процедура 2</div></div>
-        <div class="gallery-item"><div class="gallery-placeholder">Снимка Процедура 3</div></div>
-        <div class="gallery-item"><div class="gallery-placeholder">Снимка Процедура 4</div></div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img th:src="@{/images/1.jpg}" alt="Маникюр 1">
+                </div>
+                <div class="flip-card-back">
+                    <h3>3D Релефен дизайн</h3>
+                    <p>Уникален матов маникюр в шоколадови тонове с прецизно изработена релефна роза.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img th:src="@{/images/2.jpg}" alt="Маникюр 2">
+                </div>
+                <div class="flip-card-back">
+                    <h3>Инкрустация с камъни</h3>
+                    <p>Изискан млечнобял маникюр, богат на детайли и бляскави кристали за специален повод.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img th:src="@{/images/3.jpg}" alt="Маникюр 3">
+                </div>
+                <div class="flip-card-back">
+                    <h3>Модерен Френски</h3>
+                    <p>Блестяща каучукова база с чиста бяла усмивка и нежен преливащ брокат.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img th:src="@{/images/4.jpg}" alt="Маникюр 4">
+                </div>
+                <div class="flip-card-back">
+                    <h3>Салонен Арт</h3>
+                    <p>Топли есенни цветове, съчетани с фино изрисувано есенно листо на ръка.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img th:src="@{/images/5.jpg}" alt="Маникюр 5">
+                </div>
+                <div class="flip-card-back">
+                    <h3>Неонов градиент</h3>
+                    <p>Свеж летен дизайн в наситено розово с абстрактни неонови преливания.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img th:src="@{/images/6.jpg}" alt="Маникюр 6">
+                </div>
+                <div class="flip-card-back">
+                    <h3>Акрилна скулптура</h3>
+                    <p>Впечатляващ дизайн с обемни 3D червени рози и детайлни зелени листа върху чиста основа.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img th:src="@{/images/7.jpg}" alt="Маникюр 7">
+                </div>
+                <div class="flip-card-back">
+                    <h3>Екстравагантно изграждане</h3>
+                    <p>Дълга и остра форма „Стилето“, заздравена с гел и декорирана с фини кристали.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img th:src="@{/images/8.jpg}" alt="Маникюр 8">
+                </div>
+                <div class="flip-card-back">
+                    <h3>Тематичен дизайн</h3>
+                    <p>Мистично матово черно в комбинация с детайлно и реалистично изрисувано око.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img th:src="@{/images/9.jpg}" alt="Маникюр 9">
+                </div>
+                <div class="flip-card-back">
+                    <h3>Празничен уют</h3>
+                    <p>Коледно вдъхновение с наситено червено, зимни детайли и ръчно нарисувано еленче Рудолф.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img th:src="@{/images/10.jpg}" alt="Маникюр 10">
+                </div>
+                <div class="flip-card-back">
+                    <h3>Готическа визия</h3>
+                    <p>Стилен френски маникюр, преобразен за Хелоуин с блестящи 3D паяци.</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
@@ -240,10 +371,16 @@
 
         <div class="contact-map-block">
             <h4>Къде да ни намерите</h4>
-            <div class="map-placeholder">
-                <i class="fa-solid fa-location-dot"></i>
-                <p>гр. София, ул. "Красота" №15</p>
-                <span class="map-mock-btn">Виж в Google Maps</span>
+            <div class="map-container">
+                <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2932.4284145958567!2d23.315623076592476!3d42.70014261320779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8b0efdf35a83%3A0x8673a5539fa951f2!2z0YPQuy4g0J7RgtC10YYg0J_QsNC40YHQuNC5IDQ0LCAxMzAzINCh0L7RhNC40Y8!5e0!3m2!1sbg!2sbg!4v1719999999999!5m2!1sbg!2sbg"
+                        width="100%"
+                        height="250"
+                        style="border:0; border-radius: 16px;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
 
