@@ -3,53 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grace & Glow - Салон за красота</title>
+    <title>Stilpres M - Център за красота</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<div id="intro-screen">
+    <div class="intro-content">
+        <img th:src="@{/images/logo-text.png}" alt="Stilpres M" class="intro-logo-img" src="">
+    </div>
+</div>
+<header class="transparent-header">
+    <div class="logo-container">
+        <a th:href="@{/}">
+            <img th:src="@{/images/logo-nav1.png}" alt="Stilpres M" class="logo-img" src="">
+        </a>
+    </div>
+    <div class="nav-center-wrapper">
+        <nav id="nav-menu">
+            <a href="#home">НАЧАЛО</a>
+            <a href="#about">ЗА НАС</a>
+            <a href="#services">УСЛУГИ</a>
+            <a href="#prices">ЦЕНОРАЗПИС</a>
 
-<header>
-    <div class="logo">Grace & Glow</div>
-    <nav id="nav-menu">
-        <a href="#home" onclick="document.getElementById('nav-menu').classList.remove('active')">Начало</a>
-        <a href="#about" onclick="document.getElementById('nav-menu').classList.remove('active')">За нас</a>
-        <a href="#services" onclick="document.getElementById('nav-menu').classList.remove('active')">Услуги</a>
-        <a href="#prices" onclick="document.getElementById('nav-menu').classList.remove('active')">Ценоразпис</a>
-        <a href="#gallery" onclick="document.getElementById('nav-menu').classList.remove('active')">Галерия</a>
-        <a href="#reviews" onclick="document.getElementById('nav-menu').classList.remove('active')">Отзиви</a>
-        <a href="#contacts" onclick="document.getElementById('nav-menu').classList.remove('active')">Контакти</a>
+            <div class="dropdown-menu-container">
+                <button class="dots-btn" type="button" onclick="toggleDropdown(event)">&#8942;</button>
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="#contacts">КОНТАКТИ</a>
+                    <a href="#gallery">ГАЛЕРИЯ</a>
+                    <a href="#reviews">ОТЗИВИ</a>
+                    <a href="#products">ПРОДУКТИ</a>
+                    <a href="#team">ЕКИП</a>
+                    <a href="#training">ОБУЧЕНИЯ</a>
+                </div>
+            </div>
+        </nav>
+    </div>
 
-        <span class="auth-buttons">
-                <a th:href="@{/login}" class="link-login">Вход</a>
-                <a th:href="@{/register}" class="link-register">Регистрация</a>
-                <a th:href="@{/login}" class="btn-nav-book">Запази час</a>
-            </span>
-    </nav>
+    <div class="header-right-wrapper">
+        <div class="search-box-container">
+            <form class="search-form">
+                <input
+                        type="text"
+                        placeholder="Търси..."
+                        class="search-input"
+                        autocomplete="off"
+                >
+
+                <button type="submit" class="search-submit-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+
+            <div class="search-results"></div>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" class="social-circle" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-circle" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://tiktok.com" target="_blank" class="social-circle" title="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+    </div>
 
     <button class="hamburger" id="hamburger-btn" type="button" onclick="document.getElementById('nav-menu').classList.toggle('active')">&#9776;</button>
 </header>
 
 <section id="home" class="hero-section">
-    <div class="hero-wrapper">
-        <div class="hero-content">
-            <h1>Изящество и стил за твоите нокти</h1>
-            <p>Подари си професионална грижа, изящни арт дизайни и дълготраен блясък в уютна и релаксираща атмосфера.</p>
-            <a th:href="@{/login}" class="btn-hero-book">Запази час</a>
-        </div>
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="/videos/hero.mp4" type="video/mp4">
+            Вашият браузър не поддържа видео.
+        </video>
 
-        <div class="hero-floating-art">
-            <div class="aesthetic-card card-1">
-                <img th:src="@{/images/nailpolish.jpg}" alt="Професионален гел лак">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-wrapper">
+            <div class="hero-content">
+                <a th:href="@{/login}" class="btn-hero-book">ЗАПАЗИ ЧАС</a>
             </div>
-
-            <div class="aesthetic-card card-2">
-                <img th:src="@{/images/nails.jpg}" alt="Изящен чист маникюр">
-            </div>
-
-            <div class="aesthetic-card card-3"></div>
         </div>
-    </div>
 </section>
 
 <section id="about" class="about-section">
@@ -60,7 +100,7 @@
             <p>Работя изключително с висококачествени и сертифицирани материали, като следя най-новите тенденции в дизайна и здравето на нокътната плочка.</p>
         </div>
         <div class="about-image">
-            <img th:src="@{/images/Steliana.jpg}" alt="Стелиана Петрова" style="width: 100%; border-radius: 20px; box-shadow: 0 5px 20px rgba(111,78,55,0.1);">
+            <img th:src="@{/images/Steliana.jpg}" alt="Стелиана Петрова" style="width: 100%; border-radius: 20px; box-shadow: 0 5px 20px rgba(111,78,55,0.1);" src="">
         </div>
     </div>
 </section>
@@ -183,7 +223,7 @@
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img th:src="@{/images/1.jpg}" alt="Маникюр 1">
+                    <img th:src="@{/images/1.jpg}" alt="Маникюр 1" src="">
                 </div>
                 <div class="flip-card-back">
                     <h3>3D Релефен дизайн</h3>
@@ -195,7 +235,7 @@
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img th:src="@{/images/2.jpg}" alt="Маникюр 2">
+                    <img th:src="@{/images/2.jpg}" alt="Маникюр 2" src="">
                 </div>
                 <div class="flip-card-back">
                     <h3>Инкрустация с камъни</h3>
@@ -207,7 +247,7 @@
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img th:src="@{/images/3.jpg}" alt="Маникюр 3">
+                    <img th:src="@{/images/3.jpg}" alt="Маникюр 3" src="">
                 </div>
                 <div class="flip-card-back">
                     <h3>Модерен Френски</h3>
@@ -219,7 +259,7 @@
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img th:src="@{/images/4.jpg}" alt="Маникюр 4">
+                    <img th:src="@{/images/4.jpg}" alt="Маникюр 4" src="">
                 </div>
                 <div class="flip-card-back">
                     <h3>Салонен Арт</h3>
@@ -231,7 +271,7 @@
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img th:src="@{/images/5.jpg}" alt="Маникюр 5">
+                    <img th:src="@{/images/5.jpg}" alt="Маникюр 5" src="">
                 </div>
                 <div class="flip-card-back">
                     <h3>Неонов градиент</h3>
@@ -243,7 +283,7 @@
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img th:src="@{/images/6.jpg}" alt="Маникюр 6">
+                    <img th:src="@{/images/6.jpg}" alt="Маникюр 6" src="">
                 </div>
                 <div class="flip-card-back">
                     <h3>Акрилна скулптура</h3>
@@ -255,7 +295,7 @@
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img th:src="@{/images/7.jpg}" alt="Маникюр 7">
+                    <img th:src="@{/images/7.jpg}" alt="Маникюр 7" src="">
                 </div>
                 <div class="flip-card-back">
                     <h3>Екстравагантно изграждане</h3>
@@ -267,7 +307,7 @@
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img th:src="@{/images/8.jpg}" alt="Маникюр 8">
+                    <img th:src="@{/images/8.jpg}" alt="Маникюр 8" src="">
                 </div>
                 <div class="flip-card-back">
                     <h3>Тематичен дизайн</h3>
@@ -279,7 +319,7 @@
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img th:src="@{/images/9.jpg}" alt="Маникюр 9">
+                    <img th:src="@{/images/9.jpg}" alt="Маникюр 9" src="">
                 </div>
                 <div class="flip-card-back">
                     <h3>Празничен уют</h3>
@@ -291,7 +331,7 @@
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img th:src="@{/images/10.jpg}" alt="Маникюр 10">
+                    <img th:src="@{/images/10.jpg}" alt="Маникюр 10" src="">
                 </div>
                 <div class="flip-card-back">
                     <h3>Готическа визия</h3>
@@ -329,48 +369,50 @@
         <span class="partner-brand">Kodi Professional</span>
     </div>
 </section>
-
 <section id="contacts" class="contacts-section">
     <div class="contacts-container">
 
         <div class="contact-info-block">
-            <div class="footer-logo">Grace & Glow</div>
-            <p class="studio-desc">Студио за професионален маникюр и естетика.</p>
+            <div class="footer-logo">
+                <img th:src="@{/images/logo-nav1.png}" alt="Stilpres M" class="footer-logo-img" src="">
+            </div>
+            <p class="studio-desc">Център за красота.</p>
 
+            <p class="contacts-section-title">Свържете се с нас.</p>
             <div class="info-item">
                 <i class="fa-solid fa-phone"></i>
                 <span>+359 877 366 448</span>
             </div>
             <div class="info-item">
                 <i class="fa-solid fa-envelope"></i>
-                <span>info@graceandglow.com</span>
+                <span>aesthetinformation@gmail.com</span>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>stilpresm@gmail.com</span>
             </div>
 
             <div class="work-hours">
                 <h4><i class="fa-solid fa-calendar-days"></i> Работно време</h4>
-                <p>Понеделник - Петък: 09:00 - 19:00</p>
-                <p>Събота: 10:00 - 16:00</p>
+                <p>Понеделник - Събота: 08:00 - 20:00</p>
                 <p>Неделя: Почивен ден</p>
             </div>
 
             <div class="social-links">
                 <a href="https://www.facebook.com/profile.php?id=100038914457753&locale=bg_BG" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/ssttuuddiiooss/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@ssttuuddiiooss?lang=bg" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
             </div>
         </div>
 
-        <div class="contact-form-block">
-            <h4>Задайте въпрос</h4>
-            <form action="#" method="post" class="qa-form">
-                <input type="text" placeholder="Вашето име" required>
-                <input type="email" placeholder="Вашият Имейл" required>
-                <textarea placeholder="Вашият въпрос..." rows="4" required></textarea>
-                <button type="submit" class="btn-submit-qa">Изпрати</button>
-            </form>
-        </div>
-
         <div class="contact-map-block">
-            <h4>Къде да ни намерите</h4>
+            <p class="map-section-title">Къде да ни намерите:</p>
+            <div class="address-wrapper">
+                <p>
+                    <span>Адрес: </span>
+                    <span>ул. „Отец Паисий“ 44, 1303 София</span>
+                </p>
+            </div>
             <div class="map-container">
                 <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2932.4284145958567!2d23.315623076592476!3d42.70014261320779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8b0efdf35a83%3A0x8673a5539fa951f2!2z0YPQuy4g0J7RgtC10YYg0J_QsNC40YHQuNC5IDQ0LCAxMzAzINCh0L7RhNC40Y8!5e0!3m2!1sbg!2sbg!4v1719999999999!5m2!1sbg!2sbg"
@@ -384,16 +426,44 @@
             </div>
         </div>
 
+        <div class="contact-form-block">
+            <p class="form-main-title">Задайте своя въпрос:</p>
+            <form action="mailto:aesthetinformation@gmail.com" method="post" class="qa-form" enctype="text/plain">
+                <label>
+                    <input type="text" placeholder="Вашето име" required>
+                </label>
+                <label>
+                    <input type="email" placeholder="Вашият Имейл" required>
+                </label>
+                <label>
+                    <textarea placeholder="Вашият въпрос..." rows="4" required></textarea>
+                </label>
+
+                <div class="file-upload-container">
+                    <span class="file-upload-label-text">Прикачете снимка (по желание):</span>
+                    <label for="image-upload" class="custom-file-btn">Избор на файл</label>
+                    <input type="file" id="image-upload" name="image" accept="image/*">
+                    <div id="file-success-message"></div>
+                </div>
+
+                <button type="submit" class="btn-submit-qa">Изпрати</button>
+                <div id="form-success-msg" style="display: none; color: #4CAF50; font-size: 14px; margin-top: 10px; font-family: 'Montserrat', sans-serif;">
+                    Вашият въпрос беше изпратен успешно!
+                </div>
+            </form>
+        </div>
     </div>
 
     <div class="footer-bottom">
-        <p>&copy; 2026 Grace & Glow. Всички права запазени.</p>
         <div class="legal-links">
+            <a href="#">&copy; 2026 СТИЛПРЕС М. Всички права запазени.</a>
+            <span class="divider">|</span>
             <a href="#">Политика за лични данни</a>
             <span class="divider">|</span>
             <a href="#">Общи условия</a>
         </div>
     </div>
 </section>
+<script th:src="@{/js/script.js}"></script>
 </body>
 </html>
