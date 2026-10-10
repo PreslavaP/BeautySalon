@@ -46,7 +46,7 @@ section {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #ffffff;
+    background-color: #111111;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -720,32 +720,63 @@ section {
 
 /* --- 9. ПАРТНЬОРИ (PARTNERS) --- */
 .partners-section {
-    padding: 40px 10%;
-    background-color: #f3eae1;
+    width: 100%;
+    padding: 40px 0;
     text-align: center;
+    background-color: #fff;
+    overflow: hidden;
 }
 
 .partners-section h3 {
-    font-size: 16px;
-    color: #8c736c;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #333;
+}
+
+.partners-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
 }
 
 .partners-logos {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    flex-wrap: wrap;
+    width: max-content;
+    animation: scrollLogos 35s linear infinite;
 }
 
 .partner-brand {
-    font-size: 22px;
-    font-weight: 700;
-    color: #a69285;
-    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 100px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    padding: 15px;
+    flex-shrink: 0;
+}
+
+.partner-brand img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(0%);
+    transition: filter 0.3s ease;
+}
+
+.partner-brand img:hover {
+    filter: grayscale(0%);
+}
+
+@keyframes scrollLogos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 /* --- 10. КОНТАКТИ & ФУТЪР  --- */
