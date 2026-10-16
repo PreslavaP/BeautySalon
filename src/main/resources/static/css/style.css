@@ -1,11 +1,6 @@
 /* --- 0. ГЛОБАЛНИ НАСТРОЙКИ & ЦВЕТОВЕ --- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
-@font-face {
-  font-family: 'Buongiorno Rastellino';
-  src: url('C:\Users\Admin\Desktop\BeautySalonDemoProject\beautysalon\src\main\resources\static\css\fonts\buongiorno-rastellino.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
+
 * {
     margin: 0;
     padding: 0;
@@ -24,12 +19,12 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     display: none;
 }
 
-h2 {
+.title {
     font-size: 32px;
     color: #111111;
+    font-family: 'Impact';
     text-align: center;
     margin-bottom: 10px;
-    font-weight: 600;
 }
 
 .section-subtitle {
@@ -428,109 +423,60 @@ section {
 
 /* --- 3. НАЧАЛЕН ЕКРАН (HERO) --- */
 .hero-section {
-    width: 100%;
-    min-height: 100vh;
-
     position: relative;
+    width: 100%;
+    height: 100vh;
     overflow: hidden;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    padding: 0;
 }
 
 .hero-video {
     position: absolute;
-
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     z-index: 0;
-}
-
-.hero-overlay {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background: rgba(0, 0, 0, 0.25);
-
-    z-index: 1;
 }
 
 .hero-wrapper {
     position: relative;
-
     width: 100%;
     height: 100%;
-
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-
     z-index: 2;
 }
 
-.hero-content {
-    max-width: 580px;
-    text-align: center;
-}
-
 .btn-hero-book {
-    position: absolute;
-
-    left: 50%;
-    bottom: 85px;
-
-    transform: translateX(-50%);
-
-    z-index: 3;
-
     display: inline-flex;
     align-items: center;
-    justify-content: bottom;
+    justify-content: center;
 
     padding: 14px 38px;
-
     border-radius: 30px;
-
-    background: transparent;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
 
     color: #ffffff !important;
     text-decoration: none !important;
 
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 500;
     letter-spacing: 1px;
 
     transition: all 0.3s ease;
+    z-index: 3;
 }
 
 .btn-hero-book:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: #ffffff !important;
-    backdrop-filter: blur(5px);
-    transform: translateX(-50%) translateY(-3px);
-}
-
-
-.hero-content p {
-    font-size: 19px;
-    color: #654631;
-    margin-bottom: 40px;
-    font-weight: 300;
-    line-height: 1.6;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
 }
 
 /* --- 4. ЗА НАС (ABOUT) --- */
@@ -628,7 +574,16 @@ section {
     overflow: hidden;
 }
 
-.prices-section h2,
+.prices-section .title-prices-section {
+    color: #ffffff !important;
+    text-align: right;
+    font-family: 'Impact';
+    font-size: 32px;
+    padding-right: 20px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    margin: 5px 0;
+}
+
 .prices-section .section-subtitle {
     color: #ffffff !important;
     text-align: right;
