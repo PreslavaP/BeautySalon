@@ -91,12 +91,13 @@
 <section id="about" class="about-section">
     <div class="about-container">
         <div class="about-image">
-            <img th:src="@{/images/Steliana.png}" alt="Стелиана Петрова" style="width: 100%; border-radius: 20px; box-shadow: 0 5px 20px rgba(111,78,55,0.1);" src="">
+            <img th:src="@{/images/Steliana.png}" alt="Стелиана Петрова" src="">
         </div>
         <div class="about-text">
-            <p class="title">НАШАТА ИСТОРИЯ</p>
-            <p>Добре дошли в Grace & Glow – мястото, където изкуството среща грижата за ноктите. Аз вярвам, че маникюрът не е просто процедура, а начин да изразиш себе си и да си подариш заслужено самочувствие.</p>
-            <p>Работя изключително с висококачествени и сертифицирани материали, като следя най-новите тенденции в дизайна и здравето на нокътната плочка.</p>
+            <h2 class="title">НАШАТА ИСТОРИЯ</h2>
+            <p>Нека Ви се представя - казвам се Стелиана Петрова, </p>
+            <p>Зад екипа на СТИЛПРЕС М стои дългогодишен професионален опит, изграден върху знания, прецизност и безкомпромисно качество. Грижата за вашите нокти се основава на персонален подход, сертифицирани стандарти и внимание към всеки детайл.</p>
+            <p>СТИЛПРЕС М е вашето място за стил, естетика и гарантиран резултат!</p>
         </div>
 
     </div>
@@ -173,14 +174,17 @@
                 <td class="price-val">45 €</td>
             </tr>
             <tr style="border-bottom: none;">
+                <td></td>
                 <td> Размер M <i class="fa-regular fa-clock"></i> 2 часа</td>
                 <td class="price-val">50 €</td>
             </tr>
             <tr style="border-bottom: none;">
+                <td></td>
                 <td> Размер L <i class="fa-regular fa-clock"></i> 2 часа</td>
                 <td class="price-val">55 €</td>
             </tr>
             <tr>
+                <td></td>
                 <td> Размер XL <i class="fa-regular fa-clock"></i> 2 часа</td>
                 <td class="price-val">60 €</td>
             </tr>
@@ -361,8 +365,8 @@
 </section>
 
 <section id="reviews" class="reviews-section">
-    <p class="title">ДОВЕТИЕ В ДЕТАЙЛИ</p>
-    <p class="section-subtitle">Споделеното от Вас за нашите услусги.</p>
+    <p class="title">ДОВЕРИЕ В ДЕТАЙЛИ</p>
+    <p class="section-subtitle">Споделеното от Вас за нашите услуги.</p>
     <div class="reviews-grid">
         <div class="review-card">
             <div class="stars">⭐⭐⭐⭐⭐</div>
@@ -482,12 +486,12 @@
     <div class="contacts-container">
 
         <div class="contact-info-block">
-            <div class="footer-logo">
+            <a href="#home" class="footer-logo">
                 <img th:src="@{/images/Logos/logo-nav1.png}" alt="Stilpres M" class="footer-logo-img" src="">
-            </div>
+            </a>
             <p class="studio-desc">Център за красота.</p>
 
-            <p class="contacts-section-title">Свържете се с нас.</p>
+            <p class="contacts-section-title">СВЪРЖЕТЕ СЕ С НАС</p>
             <div class="info-item">
                 <i class="fa-solid fa-phone"></i>
                 <span>+359 877 366 448</span>
@@ -502,7 +506,7 @@
             </div>
 
             <div class="work-hours">
-                <h4><i class="fa-solid fa-calendar-days"></i> Работно време</h4>
+                <h4><i class="fa-solid fa-calendar-days"></i> РАБОТНО ВРЕМЕ</h4>
                 <p>Понеделник - Събота: 08:00 - 20:00</p>
                 <p>Неделя: Почивен ден</p>
             </div>
@@ -515,7 +519,7 @@
         </div>
 
         <div class="contact-map-block">
-            <p class="map-section-title"><span class="fancy-font">Къде</span> да ни намерите:</p>
+            <p class="map-section-title">КЪДЕ ДА НИ НАМЕРИТЕ</p>
             <div class="address-wrapper">
                 <p>
                     <span>Адрес: </span>
@@ -536,27 +540,27 @@
         </div>
 
         <div class="contact-form-block">
-            <p class="form-main-title">Задайте своя въпрос:</p>
-            <form action="mailto:aesthetinformation@gmail.com" method="post" class="qa-form" enctype="text/plain">
+            <p class="form-main-title">ЗАДАЙТЕ СВОЯ ВЪПРОС</p>
+            <form th:action="@{/send-question}" method="post" class="qa-form" enctype="multipart/form-data">
                 <label>
-                    <input type="text" placeholder="Вашето име" required>
+                    <input type="text" name="name" placeholder="Вашето име" required>
                 </label>
                 <label>
-                    <input type="email" placeholder="Вашият Имейл" required>
+                    <input type="email" name="email" placeholder="Вашият Имейл" required>
                 </label>
                 <label>
-                    <textarea placeholder="Вашият въпрос..." rows="4" required></textarea>
+                    <textarea name="message" placeholder="Вашият въпрос..." rows="4" required></textarea>
                 </label>
 
                 <div class="file-upload-container">
                     <span class="file-upload-label-text">Прикачете снимка (по желание):</span>
                     <label for="image-upload" class="custom-file-btn">Избор на файл</label>
                     <input type="file" id="image-upload" name="image" accept="image/*">
-                    <div id="file-success-message"></div>
+                    <div id="file-success-message" style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 400;"></div>
                 </div>
 
-                <button type="submit" class="btn-submit-qa">Изпрати</button>
-                <div id="form-success-msg" style="display: none; color: #4CAF50; font-size: 14px; margin-top: 10px; font-family: 'Montserrat', sans-serif;">
+                <button type="submit" class="btn-submit-qa">ИЗПРАТИ</button>
+                <div id="form-success-msg" style="display: none; color: #4CAF50; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 400; margin-top: 10px;">
                     Вашият въпрос беше изпратен успешно!
                 </div>
             </form>

@@ -192,15 +192,30 @@ const successMsg = document.getElementById('form-success-msg');
 
 if (qaForm) {
     qaForm.addEventListener('submit', function(e) {
-        successMsg.style.display = 'block';
+        e.preventDefault();
 
-        setTimeout(() => {
-            successMsg.style.display = 'none';
-            qaForm.reset();
-            const fileSuccessMsg = document.getElementById('file-success-message');
-            if(fileSuccessMsg) fileSuccessMsg.textContent = '';
-        }, 4000);
+        const formData = new FormData(qaForm);
+
+        fetch(qaForm.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                successMsg.style.display = 'block';
+                qaForm.reset();
+                if (fileSuccessMessage) fileSuccessMessage.textContent = '';
+
+                setTimeout(() => {
+                    successMsg.style.display = 'none';
+                }, 4000);
+            } else {
+                alert('Грешка при изпращането.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Грешка при връзката със сървъра.');
+        });
     });
 }
-
-
