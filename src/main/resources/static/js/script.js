@@ -1,33 +1,33 @@
 /* ИНТРО */
 document.addEventListener("DOMContentLoaded", function() {
-        document.body.classList.add("loading");
+    document.body.classList.add("loading");
+
+    setTimeout(function() {
+        const introScreen = document.getElementById("intro-screen");
+
+        introScreen.style.opacity = '0';
 
         setTimeout(function() {
-            const introScreen = document.getElementById("intro-screen");
+            introScreen.style.display = 'none';
+            document.body.classList.remove("loading");
+        }, 600);
 
-            introScreen.style.opacity = '0';
+    }, 4000);
+});
 
-            setTimeout(function() {
-                introScreen.style.display = 'none';
-                document.body.classList.remove("loading");
-            }, 600);
+/* --- Функция за показване/скриване на падащото меню в навигационната лента --- */
+function toggleDropdown(event) {
+    event.stopPropagation();
+    const dropdown = document.getElementById("dropdownContent");
+    dropdown.classList.toggle("show");
+}
 
-        }, 4000);
-    });
-
-    /* --- Функция за показване/скриване на падащото меню в навигационната лента --- */
-    function toggleDropdown(event) {
-        event.stopPropagation();
-        const dropdown = document.getElementById("dropdownContent");
-        dropdown.classList.toggle("show");
+window.addEventListener("click", function() {
+    const dropdown = document.getElementById("dropdownContent");
+    if (dropdown && dropdown.classList.contains("show")) {
+        dropdown.classList.remove("show");
     }
-
-    window.addEventListener("click", function() {
-        const dropdown = document.getElementById("dropdownContent");
-        if (dropdown && dropdown.classList.contains("show")) {
-            dropdown.classList.remove("show");
-        }
-    });
+});
 
 /* --- Функционалност за Search бутона --- */
 const searchForm = document.querySelector(".search-form");

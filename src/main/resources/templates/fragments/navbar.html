@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="navbar">
+    <header class="transparent-header">
+        <div class="logo-container">
+            <a th:href="@{/}">
+                <img th:src="@{/images/Logos/logo-nav1.png}" alt="Stilpres M" class="logo-img" src="">
+            </a>
+        </div>
+        <div class="nav-center-wrapper">
+            <nav id="nav-menu">
+                <a th:href="@{/index}" href="#home">НАЧАЛО</a>
+                <a href="#about">ЗА НАС</a>
+                <a href="#services">УСЛУГИ</a>
+                <a href="#prices">ЦЕНОРАЗПИС</a>
+
+                <div class="dropdown-menu-container">
+                    <button class="dots-btn" type="button" onclick="toggleDropdown(event)">&#8942;</button>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <a href="#contacts">КОНТАКТИ</a>
+                        <a href="#gallery">ГАЛЕРИЯ</a>
+                        <a href="#reviews">ОТЗИВИ</a>
+                        <a th:href="@{/products}">ПРОДУКТИ</a>
+                        <a th:href="@{/team}">ЕКИП</a>
+                        <a th:href="@{/trainings}">ОБУЧЕНИЯ</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="header-right-wrapper">
+            <div class="search-box-container">
+                <form class="search-form">
+                    <input type="text" placeholder="Търси..." class="search-input" autocomplete="off">
+                    <button type="submit" class="search-submit-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                <div class="search-results"></div>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=100038914457753&locale=bg_BG" target="_blank" class="social-circle" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/ssttuuddiiooss/" target="_blank" class="social-circle" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@ssttuuddiiooss?lang=bg" target="_blank" class="social-circle" title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+
+        <button class="hamburger" id="hamburger-btn" type="button" onclick="document.getElementById('nav-menu').classList.toggle('active')">&#9776;</button>
+    </header>
+</div>
+</body>
+</html>

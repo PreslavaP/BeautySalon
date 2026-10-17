@@ -1,0 +1,63 @@
+/* --- ЗА НАС (ABOUT) --- */
+
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    width: 100%;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+    max-width: 1100px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.about-text {
+    max-width: 500px;
+    width: 100%;
+}
+
+.about-text p {
+    color: #111111;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+.about-image {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.about-image img {
+    display: block;
+    width: 350px;
+    max-width: 350px;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    vertical-align: bottom;
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .about-image img {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .about-text {
+        padding: 0 20px;
+    }
+}

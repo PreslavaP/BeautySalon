@@ -1,0 +1,38 @@
+/* --- ГЛОБАЛНИ НАСТРОЙКИ & ЦВЕТОВЕ --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    color: #111111;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.title {
+    font-size: 32px;
+    color: #111111;
+    font-family: 'Impact';
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #111111;
+    font-size: 16px;
+    margin-bottom: 45px;
+}
+
+section {
+    padding: 140px 10% 80px 10%;
+    min-height: auto;
+    display: block;
+}

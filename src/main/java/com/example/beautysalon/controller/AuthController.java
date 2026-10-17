@@ -18,6 +18,27 @@ public class AuthController {
         this.userRepository = userRepository;
     }
 
+    @GetMapping("/index")
+    public String showHomePage() { return "index"; }
+
+    @GetMapping("/products")
+    public String showProductsPage() { return "products"; }
+
+    @GetMapping("/team")
+    public String showTeamPage() { return "team"; }
+
+    @GetMapping("/trainings")
+    public String showTrainingsPage() { return "trainings"; }
+
+    @GetMapping("/privacy-policy")
+    public String showPrivacyPolicyPage() { return "privacy-policy"; }
+
+    @GetMapping("/general-services")
+    public String showGeneralServicesPage() { return "general-services"; }
+
+    @GetMapping("/help")
+    public String showFAQsPage() { return "help"; }
+
     @GetMapping("/login")
     public String showLoginForm() {
         return "login";

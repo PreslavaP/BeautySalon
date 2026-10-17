@@ -1,0 +1,119 @@
+/* --- ЦЕНОРАЗПИС (PRICES) --- */
+.prices-section {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('/images/background_prices.png');
+    background-size: cover;
+    background-position: center left;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 5%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.prices-section .title-prices-section {
+    color: #ffffff !important;
+    text-align: right;
+    font-family: 'Impact';
+    font-size: 32px;
+    padding-right: 20px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    margin: 5px 0;
+}
+
+.prices-section .section-subtitle {
+    color: #ffffff !important;
+    text-align: right;
+    padding-right: 20px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    margin: 5px 0;
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.price-table {
+    width: 60%;
+    min-width: 600px;
+    border-collapse: collapse;
+    background-color: rgba(15, 15, 15, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    max-height: 55vh;
+    overflow: hidden;
+}
+
+.price-table thead {
+    flex-shrink: 0;
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.price-table th {
+    background-color: #26140C;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.price-table th:nth-child(1), .price-table td:nth-child(1) { width: 45%; text-align: left; }
+.price-table th:nth-child(2), .price-table td:nth-child(2) { width: 30%; text-align: left; }
+.price-table th:nth-child(3), .price-table td:nth-child(3) { width: 25%; text-align: center; }
+
+.price-table tbody {
+    display: block;
+    overflow-y: auto;
+    width: 100%;
+    max-height: calc(55vh - 55px);
+}
+
+.price-table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.price-table td {
+    padding: 12px 18px;
+    color: #e0e0e0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+.price-table .price-val {
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.price-table tr:hover td {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
+.table-container p {
+    color: #cccccc !important;
+    text-align: right !important;
+    padding-right: 10px;
+    margin-top: 10px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}

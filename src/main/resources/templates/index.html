@@ -16,66 +16,7 @@
         <img th:src="@{/images/Logos/logo-text1.png}" alt="Stilpres M" class="intro-logo-img" src="">
     </div>
 </div>
-<header class="transparent-header">
-    <div class="logo-container">
-        <a th:href="@{/}">
-            <img th:src="@{/images/Logos/logo-nav1.png}" alt="Stilpres M" class="logo-img" src="">
-        </a>
-    </div>
-    <div class="nav-center-wrapper">
-        <nav id="nav-menu">
-            <a href="#home">НАЧАЛО</a>
-            <a href="#about">ЗА НАС</a>
-            <a href="#services">УСЛУГИ</a>
-            <a href="#prices">ЦЕНОРАЗПИС</a>
-
-            <div class="dropdown-menu-container">
-                <button class="dots-btn" type="button" onclick="toggleDropdown(event)">&#8942;</button>
-                <div class="dropdown-content" id="dropdownContent">
-                    <a href="#contacts">КОНТАКТИ</a>
-                    <a href="#gallery">ГАЛЕРИЯ</a>
-                    <a href="#reviews">ОТЗИВИ</a>
-                    <a href="#products">ПРОДУКТИ</a>
-                    <a href="#team">ЕКИП</a>
-                    <a href="#training">ОБУЧЕНИЯ</a>
-                </div>
-            </div>
-        </nav>
-    </div>
-
-    <div class="header-right-wrapper">
-        <div class="search-box-container">
-            <form class="search-form">
-                <input
-                        type="text"
-                        placeholder="Търси..."
-                        class="search-input"
-                        autocomplete="off"
-                >
-
-                <button type="submit" class="search-submit-btn">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
-
-            <div class="search-results"></div>
-        </div>
-
-        <div class="social-icons">
-            <a href="https://facebook.com" target="_blank" class="social-circle" title="Facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank" class="social-circle" title="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://tiktok.com" target="_blank" class="social-circle" title="TikTok">
-                <i class="fab fa-tiktok"></i>
-            </a>
-        </div>
-    </div>
-
-    <button class="hamburger" id="hamburger-btn" type="button" onclick="document.getElementById('nav-menu').classList.toggle('active')">&#9776;</button>
-</header>
+<header th:replace="fragments/navbar :: navbar"></header>
 
 <section id="home" class="hero-section">
         <video class="hero-video" autoplay muted loop playsinline>
@@ -95,9 +36,11 @@
         </div>
         <div class="about-text">
             <h2 class="title">НАШАТА ИСТОРИЯ</h2>
-            <p>Нека Ви се представя - казвам се Стелиана Петрова, </p>
-            <p>Зад екипа на СТИЛПРЕС М стои дългогодишен професионален опит, изграден върху знания, прецизност и безкомпромисно качество. Грижата за вашите нокти се основава на персонален подход, сертифицирани стандарти и внимание към всеки детайл.</p>
-            <p>СТИЛПРЕС М е вашето място за стил, естетика и гарантиран резултат!</p>
+            <p>Нека Ви се представя - казвам се Стелиана Петрова, водещ основател и специалист в СТИЛПРЕС М.</p>
+            <br>
+            <p>Зад екипа на СТИЛПРЕС М стои дългогодишен професионален опит, изграден върху знания, прецизност и безкомпромисно качество. Грижата за Вас се основава на персонален подход, сертифицирани стандарти и внимание към всеки детайл.</p>
+            <br>
+            <p>СТИЛПРЕС М е Вашето място за стил, естетика и гарантиран резултат!</p>
         </div>
 
     </div>
@@ -482,103 +425,8 @@
     </div>
 </section>
 
-<section id="contacts" class="contacts-section">
-    <div class="contacts-container">
+<footer th:replace="fragments/footer :: footer"></footer>
 
-        <div class="contact-info-block">
-            <a href="#home" class="footer-logo">
-                <img th:src="@{/images/Logos/logo-nav1.png}" alt="Stilpres M" class="footer-logo-img" src="">
-            </a>
-            <p class="studio-desc">Център за красота.</p>
-
-            <p class="contacts-section-title">СВЪРЖЕТЕ СЕ С НАС</p>
-            <div class="info-item">
-                <i class="fa-solid fa-phone"></i>
-                <span>+359 877 366 448</span>
-            </div>
-            <div class="info-item">
-                <i class="fa-solid fa-envelope"></i>
-                <span>aesthetinformation@gmail.com</span>
-            </div>
-            <div class="info-item">
-                <i class="fa-solid fa-envelope"></i>
-                <span>stilpresm@gmail.com</span>
-            </div>
-
-            <div class="work-hours">
-                <h4><i class="fa-solid fa-calendar-days"></i> РАБОТНО ВРЕМЕ</h4>
-                <p>Понеделник - Събота: 08:00 - 20:00</p>
-                <p>Неделя: Почивен ден</p>
-            </div>
-
-            <div class="social-links">
-                <a href="https://www.facebook.com/profile.php?id=100038914457753&locale=bg_BG" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/ssttuuddiiooss/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@ssttuuddiiooss?lang=bg" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-            </div>
-        </div>
-
-        <div class="contact-map-block">
-            <p class="map-section-title">КЪДЕ ДА НИ НАМЕРИТЕ</p>
-            <div class="address-wrapper">
-                <p>
-                    <span>Адрес: </span>
-                    <span>ул. „Отец Паисий“ 44, 1303 София</span>
-                </p>
-            </div>
-            <div class="map-container">
-                <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2932.4284145958567!2d23.315623076592476!3d42.70014261320779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa8b0efdf35a83%3A0x8673a5539fa951f2!2z0YPQuy4g0J7RgtC10YYg0J_QsNC40YHQuNC5IDQ0LCAxMzAzINCh0L7RhNC40Y8!5e0!3m2!1sbg!2sbg!4v1719999999999!5m2!1sbg!2sbg"
-                        width="100%"
-                        height="250"
-                        style="border:0; border-radius: 16px;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </div>
-
-        <div class="contact-form-block">
-            <p class="form-main-title">ЗАДАЙТЕ СВОЯ ВЪПРОС</p>
-            <form th:action="@{/send-question}" method="post" class="qa-form" enctype="multipart/form-data">
-                <label>
-                    <input type="text" name="name" placeholder="Вашето име" required>
-                </label>
-                <label>
-                    <input type="email" name="email" placeholder="Вашият Имейл" required>
-                </label>
-                <label>
-                    <textarea name="message" placeholder="Вашият въпрос..." rows="4" required></textarea>
-                </label>
-
-                <div class="file-upload-container">
-                    <span class="file-upload-label-text">Прикачете снимка (по желание):</span>
-                    <label for="image-upload" class="custom-file-btn">Избор на файл</label>
-                    <input type="file" id="image-upload" name="image" accept="image/*">
-                    <div id="file-success-message" style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 400;"></div>
-                </div>
-
-                <button type="submit" class="btn-submit-qa">ИЗПРАТИ</button>
-                <div id="form-success-msg" style="display: none; color: #4CAF50; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 400; margin-top: 10px;">
-                    Вашият въпрос беше изпратен успешно!
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <div class="legal-links">
-            <a href="#">&copy; 2026 СТИЛПРЕС М. Всички права запазени.</a>
-            <span class="divider">|</span>
-            <a href="#">Политика за лични данни</a>
-            <span class="divider">|</span>
-            <a href="#">Общи условия</a>
-            <span class="divider">|</span>
-            <a href="#">FAQ</a>
-        </div>
-    </div>
-</section>
 <script th:src="@{/js/script.js}"></script>
 </body>
 </html>

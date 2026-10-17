@@ -1,0 +1,33 @@
+/* --- ИНТРО --- */
+#intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #111111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    transition: opacity 0.6s ease;
+}
+
+.intro-logo-img {
+    width: 900px;
+    height: auto;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInLogo 3.5s ease forwards;
+}
+
+@keyframes fadeInLogo {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
