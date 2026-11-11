@@ -36,8 +36,11 @@ public class AuthController {
     @GetMapping("/general-services")
     public String showGeneralServicesPage() { return "general-services"; }
 
+    @GetMapping("/faqs")
+    public String showFAQsPage() { return "faqs"; }
+
     @GetMapping("/help")
-    public String showFAQsPage() { return "help"; }
+    public String showHelpPage() { return "help"; }
 
     @GetMapping("/login")
     public String showLoginForm() {

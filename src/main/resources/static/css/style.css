@@ -13,3 +13,7 @@
 @import url('index/gallery.css');
 @import url('index/reviews.css');
 @import url('index/partners.css');
+
+/* --- №. Общи условия и Политика за личните данни --- */
+@import url('privacy-policy.css');
+@import url('help.css');

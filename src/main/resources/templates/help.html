@@ -2,15 +2,66 @@
 <html lang="bg" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>FAQ - СТИЛПРЕС М</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Помощ и поддръжка - СТИЛПРЕС М</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 <header th:replace="fragments/navbar :: navbar"></header>
 
+<main class="help-page">
+    <section class="help-hero">
+        <h1>ПОМОЩ И ПОДДРЪЖКА</h1>
+    </section>
+    <div class="help-container">
 
+        <!-- Секция 1 -->
+        <article class="help-section">
+            <div class="help-header">
+                <h2>1. Как можем да Ви помогнем?</h2>
+            </div>
+            <div class="help-body">
+                <p>Ако имате въпроси относно нашите услуги, резервации, онлайн магазина или профила си, тук ще намерите полезна информация за това как да се свържете с нас и да разрешите възникнал технически проблем.</p>
+            </div>
+        </article>
 
+        <hr class="section-divider">
+
+        <!-- Секция 2 -->
+        <article class="help-section">
+            <div class="help-header">
+                <h2>2. Техническа поддръжка на сайта</h2>
+            </div>
+            <div class="help-body">
+                <p>Ако изпитвате затруднения при зареждането на страниците, влизането в профила си или извършването на онлайн резервация, препоръчваме Ви да опитате следните стъпки:</p>
+                <ul class="styled-list">
+                    <li>Изчистете кеша (cache) и бисквитките (cookies) на Вашия уеб браузър;</li>
+                    <li>Опитайте да отворите сайта през друг браузър (напр. Google Chrome, Mozilla Firefox, Safari);</li>
+                    <li>Уверете се, че използвате актуална версия на мобилното или десктоп приложението си.</li>
+                </ul>
+            </div>
+        </article>
+
+        <hr class="section-divider">
+
+        <!-- Секция 3 -->
+        <article class="help-section">
+            <div class="help-header">
+                <h2>3. Свържете се с нашия екип</h2>
+            </div>
+            <div class="help-body">
+                <p>Ако не откривате отговор на Вашия въпрос в секцията с Често задавани въпроси (FAQ) или се нуждаете от съдействие с направена резервация, нашият екип е на разположение:</p>
+                <ul class="contact-list">
+                    <li><strong>Телефон за връзка:</strong> <a href="tel:+359877366448">+359 877 366 448</a></li>
+                    <li><strong>МОЛ:</strong> <a href="tel:+359876922083">+359 876 922 083</a></li>
+                    <li><strong>Имейл адрес:</strong> <a href="mailto:stilpresm@gmail.com">stilpresm@gmail.com</a></li>
+                    <li><strong>Адрес на салона:</strong> Кърнаре, ул. 22, №10</li>
+                </ul>
+            </div>
+        </article>
+    </div>
+</main>
 <footer th:replace="fragments/footer :: footer"></footer>
 </body>
 </html>

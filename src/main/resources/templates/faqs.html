@@ -1,0 +1,159 @@
+
+
+<!-- ИСКА ДОВЪРШИТЕЛНИ ЩРИХИ -->
+
+<!DOCTYPE html>
+<html lang="bg" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Често задавани въпроси - СТИЛПРЕС М</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header th:replace="fragments/navbar :: navbar"></header>
+
+<main class="faq-page">
+    <!-- Hero / Баннер секция -->
+    <section class="faq-hero">
+        <h1>ЧЕСТО ЗАДАВАНИ ВЪПРОСИ (FAQ)</h1>
+    </section>
+
+    <!-- Основен контейнер -->
+    <div class="faq-container">
+
+        <!-- Въпрос 1 -->
+        <article class="faq-item">
+            <div class="faq-header">
+                <span class="faq-number">1.</span>
+                <h2>Как мога да запазя час?</h2>
+            </div>
+            <div class="faq-body">
+                <p>Самостоятелно по телефон или директно от бутона за записване в сайта.</p>
+            </div>
+        </article>
+
+        <hr class="section-divider">
+
+        <!-- Въпрос 2 -->
+        <article class="faq-item">
+            <div class="faq-header">
+                <span class="faq-number">2.</span>
+                <h2>Мога ли сам да променям записания си час?</h2>
+            </div>
+            <div class="faq-body">
+                <p>Не, промени и отмени се правят единствено след свързване с нас.</p>
+            </div>
+        </article>
+
+        <hr class="section-divider">
+
+        <!-- Въпрос 3 -->
+        <article class="faq-item">
+            <div class="faq-header">
+                <span class="faq-number">3.</span>
+                <h2>Получавам ли напомняне за часа си?</h2>
+            </div>
+            <div class="faq-body">
+                <p>Да, получавате автоматично известие по имейл или Viber.</p>
+            </div>
+        </article>
+
+        <hr class="section-divider">
+
+        <!-- Въпрос 4 -->
+        <article class="faq-item">
+            <div class="faq-header">
+                <span class="faq-number">4.</span>
+                <h2>Какво се случва при закъснение?</h2>
+            </div>
+            <div class="faq-body">
+                <p>При закъснение над 15 минути часът може да бъде пренасрочен.</p>
+            </div>
+        </article>
+
+        <hr class="section-divider">
+
+        <!-- Въпрос 5 -->
+        <article class="faq-item">
+            <div class="faq-header">
+                <span class="faq-number">5.</span>
+                <h2>Как мога да платя в салона?</h2>
+            </div>
+            <div class="faq-body">
+                <p>Приемаме плащане в брой и с банкова карта на място.</p>
+            </div>
+        </article>
+
+        <hr class="section-divider">
+
+        <!-- Въпрос 6 -->
+        <article class="faq-item">
+            <div class="faq-header">
+                <span class="faq-number">6.</span>
+                <h2>Има ли паркинг за клиенти?</h2>
+            </div>
+            <div class="faq-body">
+                <p>Да, около салона има удобни места за паркиране.</p>
+            </div>
+        </article>
+
+        <hr class="section-divider">
+
+        <!-- Въпрос 7 -->
+        <article class="faq-item">
+            <div class="faq-header">
+                <span class="faq-number">7.</span>
+                <h2>Необходимо ли е да нося нещо за процедурата?</h2>
+            </div>
+            <div class="faq-body">
+                <p>Не, всичко необходимо е осигурено на място в салона.</p>
+            </div>
+        </article>
+
+        <hr class="section-divider">
+
+        <!-- Въпрос 8 -->
+        <article class="faq-item">
+            <div class="faq-header">
+                <span class="faq-number">8.</span>
+                <h2>Колко време предварително да запазя час?</h2>
+            </div>
+            <div class="faq-body">
+                <p>Препоръчваме поне неколко дни по-рано за удобен за вас ден и час.</p>
+            </div>
+        </article>
+
+        <hr class="section-divider">
+
+        <!-- Въпрос 9 -->
+        <article class="faq-item">
+            <div class="faq-header">
+                <span class="faq-number">9.</span>
+                <h2>Мога ли да доведа придружител или дете?</h2>
+            </div>
+            <div class="faq-body">
+                <p>Поради спецификата на процедурите, моля, посещавайте салона без придружители и деца.</p>
+            </div>
+        </article>
+
+        <hr class="section-divider">
+
+        <!-- Въпрос 10 -->
+        <article class="faq-item">
+            <div class="faq-header">
+                <span class="faq-number">10.</span>
+                <h2>Къде точно се намирате?</h2>
+            </div>
+            <div class="faq-body">
+                <p>Намираме се в град София, като точния адрес и карта ще откриете в секция „Контакти“.</p>
+            </div>
+        </article>
+
+    </div>
+</main>
+
+<footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>
