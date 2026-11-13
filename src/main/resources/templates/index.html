@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 <div id="intro-screen">
@@ -31,10 +32,10 @@
 
 <section id="about" class="about-section">
     <div class="about-container">
-        <div class="about-image">
+        <div class="about-image" data-aos="fade-right">
             <img th:src="@{/images/Steliana.png}" alt="Стелиана Петрова" src="">
         </div>
-        <div class="about-text">
+        <div class="about-text" data-aos="fade-left">
             <h2 class="title">НАШАТА ИСТОРИЯ</h2>
             <p>Нека Ви се представя - казвам се Стелиана Петрова, водещ основател и специалист в СТИЛПРЕС М.</p>
             <br>
@@ -50,22 +51,22 @@
     <p class="title">КАКВО ПРЕДЛАГАМЕ</p>
     <p class="section-subtitle">Професионални процедури, съобразени с твоите нужди</p>
     <div class="services-grid">
-        <div class="service-card">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="0">
             <i class="fa-solid fa-hand-sparkles"></i>
             <h3>Комбиниран / Апаратен маникюр с гел лак</h3>
             <p>Прецизно почистване и дълготрайно покритие с богат избор от цветове.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="150">
             <i class="fa-solid fa-shield-halved"></i>
             <h3>Маникюр с укрепване</h3>
             <p>Укрепване с каучукова база и гел лак за максимална здравина.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
             <i class="fa-solid fa-gem"></i>
             <h3>Ноктопластика / Поддръжка</h3>
             <p>Изграждане и поддръжка с гел, акригел или акрил върху естествен нокът.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="450">
             <i class="fa-solid fa-palette"></i>
             <h3>Вграден дизайн и декорации</h3>
             <p>Френски, омбре, детайлна рисунка, бърз салонен дизайн, камъни и релефна декорация.</p>
@@ -76,7 +77,7 @@
 <section id="prices" class="prices-section">
     <p class="title-prices-section">ЦЕНОРАЗПИС</p>
     <p class="section-subtitle">Индивидуална грижа, подбрана за Вашето здраве и красота.</p>
-    <div class="table-container">
+    <div class="table-container" data-aos="zoom-in">
         <table class="price-table">
             <thead>
             <tr>
@@ -184,7 +185,7 @@
 
     <div class="gallery-grid">
 
-        <div class="flip-card">
+        <div class="flip-card" data-aos="fade-up">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <img th:src="@{/images/1.jpg}" alt="Маникюр 1" src="">
@@ -196,7 +197,7 @@
             </div>
         </div>
 
-        <div class="flip-card">
+        <div class="flip-card" data-aos="fade-up">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <img th:src="@{/images/2.jpg}" alt="Маникюр 2" src="">
@@ -208,7 +209,7 @@
             </div>
         </div>
 
-        <div class="flip-card">
+        <div class="flip-card" data-aos="fade-up">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <img th:src="@{/images/3.jpg}" alt="Маникюр 3" src="">
@@ -220,7 +221,7 @@
             </div>
         </div>
 
-        <div class="flip-card">
+        <div class="flip-card" data-aos="fade-up">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <img th:src="@{/images/4.jpg}" alt="Маникюр 4" src="">
@@ -232,7 +233,7 @@
             </div>
         </div>
 
-        <div class="flip-card">
+        <div class="flip-card" data-aos="fade-up">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <img th:src="@{/images/5.jpg}" alt="Маникюр 5" src="">
@@ -244,7 +245,7 @@
             </div>
         </div>
 
-        <div class="flip-card">
+        <div class="flip-card" data-aos="fade-up">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <img th:src="@{/images/6.jpg}" alt="Маникюр 6" src="">
@@ -256,7 +257,7 @@
             </div>
         </div>
 
-        <div class="flip-card">
+        <div class="flip-card" data-aos="fade-up">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <img th:src="@{/images/7.jpg}" alt="Маникюр 7" src="">
@@ -268,7 +269,7 @@
             </div>
         </div>
 
-        <div class="flip-card">
+        <div class="flip-card" data-aos="fade-up">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <img th:src="@{/images/8.jpg}" alt="Маникюр 8" src="">
@@ -280,7 +281,7 @@
             </div>
         </div>
 
-        <div class="flip-card">
+        <div class="flip-card" data-aos="fade-up">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <img th:src="@{/images/9.jpg}" alt="Маникюр 9" src="">
@@ -292,7 +293,7 @@
             </div>
         </div>
 
-        <div class="flip-card">
+        <div class="flip-card" data-aos="fade-up">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
                     <img th:src="@{/images/10.jpg}" alt="Маникюр 10" src="">
@@ -427,6 +428,14 @@
 
 <footer th:replace="fragments/footer :: footer"></footer>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        once: false,
+        offset: 100
+    });
+</script>
 <script th:src="@{/js/script.js}"></script>
 </body>
 </html>

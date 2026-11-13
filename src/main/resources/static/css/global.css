@@ -13,6 +13,8 @@ html, body {
     color: #111111;
     line-height: 1.6;
     overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
 .title {
@@ -35,4 +37,7 @@ section {
     padding: 140px 10% 80px 10%;
     min-height: auto;
     display: block;
+    scroll-snap-align: start;
+    height: 100vh;
+    box-sizing: border-box;
 }
