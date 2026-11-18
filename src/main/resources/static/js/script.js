@@ -171,51 +171,53 @@ document.addEventListener("click", function(event) {
 });
 
 /* --- Функционалност форма за въпроси --- */
-//Kачена снимка
-const imageUploadInput = document.getElementById('image-upload');
-const fileSuccessMessage = document.getElementById('file-success-message');
+document.addEventListener("DOMContentLoaded", function() {
+    const qaForm = document.querySelector('.qa-form');
+    const toastNotification = document.getElementById('toast-notification');
+    const fileInput = document.getElementById('image-upload');
+    const fileSuccessMessage = document.getElementById('file-success-message');
 
-if (imageUploadInput) {
-    imageUploadInput.addEventListener('change', function() {
-        if (imageUploadInput.files && imageUploadInput.files[0]) {
-            const fileName = imageUploadInput.files[0].name;
-            fileSuccessMessage.textContent = `${fileName} успешно качена`;
-        } else {
-            fileSuccessMessage.textContent = '';
-        }
-    });
-}
-
-//Успешно изпратен въпрос
-const qaForm = document.querySelector('.qa-form');
-const successMsg = document.getElementById('form-success-msg');
-
-if (qaForm) {
-    qaForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const formData = new FormData(qaForm);
-
-        fetch(qaForm.action, {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (response.ok) {
-                successMsg.style.display = 'block';
-                qaForm.reset();
-                if (fileSuccessMessage) fileSuccessMessage.textContent = '';
-
-                setTimeout(() => {
-                    successMsg.style.display = 'none';
-                }, 4000);
+    if (fileInput && fileSuccessMessage) {
+        fileInput.addEventListener('change', function() {
+            if (fileInput.files && fileInput.files[0]) {
+                fileSuccessMessage.textContent = "Избран файл: " + fileInput.files[0].name;
             } else {
-                alert('Грешка при изпращането.');
+                fileSuccessMessage.textContent = "";
             }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Грешка при връзката със сървъра.');
         });
-    });
-}
+    }
+
+    if (qaForm) {
+        qaForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(qaForm);
+
+            fetch(qaForm.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    if (toastNotification) {
+                        toastNotification.classList.add('show');
+                        setTimeout(() => {
+                            toastNotification.classList.remove('show');
+                        }, 4000);
+                    }
+
+                    qaForm.reset();
+                    if (fileSuccessMessage) {
+                        fileSuccessMessage.textContent = '';
+                    }
+                } else {
+                    alert('Вникна грешка при изпращането на съобщението.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Грешка при връзката със сървъра.');
+            });
+        });
+    }
+});

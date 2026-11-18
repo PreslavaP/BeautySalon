@@ -17,7 +17,7 @@
         <img th:src="@{/images/Logos/logo-text1.png}" alt="Stilpres M" class="intro-logo-img" src="">
     </div>
 </div>
-<header th:replace="fragments/navbar :: navbar"></header>
+<div th:insert="~{fragments/navbar :: navbar}"></div>
 
 <section id="home" class="hero-section">
         <video class="hero-video" autoplay muted loop playsinline>
@@ -48,7 +48,7 @@
 </section>
 
 <section id="services" class="services-section">
-    <p class="title">КАКВО ПРЕДЛАГАМЕ</p>
+    <h2 class="title">КАКВО ПРЕДЛАГАМЕ</h2>
     <p class="section-subtitle">Професионални процедури, съобразени с твоите нужди</p>
     <div class="services-grid">
         <div class="service-card" data-aos="fade-up" data-aos-delay="0">
@@ -426,7 +426,7 @@
     </div>
 </section>
 
-<footer th:replace="fragments/footer :: footer"></footer>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>

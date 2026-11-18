@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<header th:replace="fragments/navbar :: navbar"></header>
+<div th:insert="~{fragments/navbar :: navbar}"></div>
 <div class="login-wrapper">
     <div class="booking-box" id="booking" style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 4px 25px rgba(111, 78, 55, 0.08); width: 100%; max-width: 500px; border: 1px solid #e6dbd1;">
         <h2 style="text-align: center; color: #6f4e37; margin-bottom: 30px;">Запази своя час</h2>
@@ -37,6 +37,6 @@
         </div>
     </div>
 </div>
-<footer th:replace="fragments/footer :: footer"></footer>
+<footer th:replace="~{fragments/footer :: footer}"></footer>
 </body>
 </html>

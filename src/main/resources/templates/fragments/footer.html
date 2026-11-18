@@ -56,6 +56,19 @@
                         referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
+            <div class="footer-subscribe" style="margin-top: 30px;">
+                <p class="map-section-title">АБОНИРАЙТЕ СЕ ЗА НАС</p>
+                <form th:action="@{/subscribe}" method="post" class="subscribe-form">
+                    <div class="subscribe-input-group">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" name="email" placeholder="Въведи e-mail" required>
+                    </div>
+                    <button type="submit" class="subscribe-btn">
+                        <i class="fa-regular fa-paper-plane"></i>
+                        <span>АБОНИРАЙТЕ СЕ</span>
+                    </button>
+                </form>
+            </div>
         </div>
 
         <div class="contact-form-block">
@@ -79,11 +92,13 @@
                 </div>
 
                 <button type="submit" class="btn-submit-qa">ИЗПРАТИ</button>
-                <div id="form-success-msg" style="display: none; color: #4CAF50; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 400; margin-top: 10px;">
-                    Вашият въпрос беше изпратен успешно!
-                </div>
             </form>
         </div>
+    </div>
+
+    <div id="toast-notification">
+        <i class="fa-solid fa-circle-check"></i>
+        <span>Вашият въпрос беше изпратен успешно!</span>
     </div>
 
     <div class="footer-bottom">

@@ -46,9 +46,9 @@ public class QuestionController {
 
         } catch (MessagingException e) {
             e.printStackTrace();
-            return "redirect:/#about?error";
+            return "redirect:/#contacts?error";
         }
 
-        return "redirect:/#about?success";
+        return "redirect:/#contacts?success";
     }
 }

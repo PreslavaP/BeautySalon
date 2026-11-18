@@ -1,115 +1,76 @@
-/*ИСКА ДОВЪРШИТЕЛНИ ЩРИХИ*/
 body {
     font-family: 'Montserrat', sans-serif;
     color: #333333;
     background-color: #ffffff;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
 }
 
-.privacy-hero,
-.faq-hero,
-.help-hero {
-    background-color: #f2f2f2;
-    padding: 60px 20px;
+.faq-hero {
+    background: linear-gradient(to bottom, #8C8889 0%, #ffffff 100%);
+    min-height: 220px;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    margin-bottom: 50px;
+    box-sizing: border-box;
+    border: none;
+    box-shadow: none;
 }
 
-.privacy-hero h1,
-.faq-hero h1,
-.help-hero h1 {
-    font-size: 22px;
+.faq-hero h1 {
+    font-size: 50px;
     font-weight: 700;
     letter-spacing: 1px;
     color: #111111;
-    margin: 0;
     text-transform: uppercase;
+    margin: 0;
+    font-family: 'Impact', sans-serif;
 }
 
-.privacy-container,
-.faq-container,
-.help-container {
+.faq-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 20px 80px 20px;
+    padding: 40px 20px 80px 20px;
 }
 
-.privacy-section,
-.faq-item,
-.help-section {
+.faq-item {
     margin-bottom: 25px;
 }
 
-.section-header,
-.faq-header,
-.help-header {
+.faq-header {
     display: flex;
     align-items: flex-start;
     gap: 15px;
     margin-bottom: 12px;
 }
 
-.section-number,
-.faq-number,
-.help-number {
-    background-color: #000000;
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: bold;
-    min-width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.section-header h2,
-.faq-header h2,
-.help-header h2 {
+.faq-header h2 {
     font-size: 18px;
     font-weight: 700;
     color: #000000;
     margin: 0;
     line-height: 1.3;
-    padding-top: 8px;
+    padding-top: 4px;
 }
 
-.section-body,
-.faq-body,
-.help-body {
+.faq-body {
     font-size: 14px;
     color: #444444;
 }
 
-.section-body p,
-.faq-body p,
-.help-body p {
+.faq-body p {
     margin-top: 0;
     margin-bottom: 15px;
 }
 
-.section-body h3,
-.faq-body h3,
-.help-body h3 {
+.faq-body h3 {
     font-size: 15px;
     font-weight: 700;
     color: #111111;
     margin-top: 20px;
     margin-bottom: 10px;
-}
-
-.styled-list,
-.contact-list {
-    padding-left: 20px;
-    margin-bottom: 15px;
-}
-
-.styled-list li,
-.contact-list li {
-    margin-bottom: 6px;
 }
 
 .section-divider {
@@ -128,36 +89,20 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-    .privacy-hero,
-    .faq-hero,
-    .help-hero {
+    .faq-hero {
         padding: 40px 15px;
     }
 
-    .privacy-hero h1,
-    .faq-hero h1,
-    .help-hero h1 {
-        font-size: 18px;
+    .faq-hero h1 {
+        font-size: 24px;
     }
 
-    .section-header,
-    .faq-header,
-    .help-header {
+    .faq-header {
         gap: 10px;
     }
 
-    .section-number,
-    .faq-number,
-    .help-number {
-        min-width: 32px;
-        height: 32px;
-        font-size: 15px;
-    }
-
-    .section-header h2,
-    .faq-header h2,
-    .help-header h2 {
+    .faq-header h2 {
         font-size: 16px;
-        padding-top: 4px;
+        padding-top: 2px;
     }
 }
