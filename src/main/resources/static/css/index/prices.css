@@ -98,6 +98,11 @@
     vertical-align: middle;
 }
 
+.price-table td.repeat-label {
+    color: transparent !important;
+    user-select: none;
+}
+
 .price-table .price-val {
     font-weight: bold;
     color: #ffffff;

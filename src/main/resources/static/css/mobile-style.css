@@ -198,7 +198,7 @@
         padding: 28px 20px;
     }
 
-/* Ценоразпис */
+    /* Ценоразпис */
     .prices-section {
         height: auto;
         min-height: auto;
@@ -227,7 +227,7 @@
         height: auto !important;
         display: table !important;
         table-layout: fixed !important;
-        overflow: visible !important;
+        overflow: hidden !important;
         border-radius: 14px;
     }
 
@@ -250,42 +250,43 @@
 
     .price-table th:nth-child(1),
     .price-table td:nth-child(1) {
-        width: 46% !important;
+        width: 42% !important;
         text-align: left !important;
     }
 
     .price-table th:nth-child(2),
     .price-table td:nth-child(2) {
-        width: 30% !important;
+        width: 31% !important;
         text-align: left !important;
     }
 
     .price-table th:nth-child(3),
     .price-table td:nth-child(3) {
-        width: 24% !important;
+        width: 27% !important;
         text-align: center !important;
     }
 
     .price-table th,
     .price-table td {
-        padding: 10px 6px !important;
-        font-size: 0.74rem !important;
+        padding: 10px 5px !important;
+        font-size: 0.72rem !important;
         line-height: 1.35 !important;
-        overflow-wrap: break-word;
-        word-break: normal;
-        box-sizing: border-box;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        box-sizing: border-box !important;
     }
 
-    .price-table td {
-        max-width: 0;
-        word-wrap: break-word;
+    .price-table td.repeat-label {
+        color: transparent !important;
+        user-select: none;
     }
 
     .price-table .price-val {
         white-space: normal !important;
-        font-size: 0.72rem !important;
-        text-align: right !important;
-        padding-right: 8px !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        text-align: center !important;
+        font-size: 0.7rem !important;
     }
 
     .table-container p {
