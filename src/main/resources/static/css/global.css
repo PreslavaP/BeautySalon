@@ -7,13 +7,13 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+
 html, body {
     font-family: 'Montserrat', sans-serif;
     background-color: #ffffff;
     color: #111111;
     line-height: 1.6;
     overflow-x: hidden;
-    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 }
 
@@ -34,10 +34,8 @@ html, body {
 }
 
 section {
-    padding: 140px 10% 80px 10%;
+    padding: 100px 10% 80px 10%;
     min-height: auto;
     display: block;
-    scroll-snap-align: start;
-    height: 100vh;
     box-sizing: border-box;
 }

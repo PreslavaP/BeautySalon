@@ -19,28 +19,44 @@ public class AuthController {
     }
 
     @GetMapping("/index")
-    public String showHomePage() { return "index"; }
+    public String showHomePage() {
+        return "index";
+    }
 
     @GetMapping("/products")
-    public String showProductsPage() { return "products"; }
+    public String showProductsPage() {
+        return "products";
+    }
 
     @GetMapping("/team")
-    public String showTeamPage() { return "team"; }
+    public String showTeamPage() {
+        return "team";
+    }
 
     @GetMapping("/trainings")
-    public String showTrainingsPage() { return "trainings"; }
+    public String showTrainingsPage() {
+        return "trainings";
+    }
 
     @GetMapping("/privacy-policy")
-    public String showPrivacyPolicyPage() { return "privacy-policy"; }
+    public String showPrivacyPolicyPage() {
+        return "privacy-policy";
+    }
 
     @GetMapping("/general-services")
-    public String showGeneralServicesPage() { return "general-services"; }
+    public String showGeneralServicesPage() {
+        return "general-services";
+    }
 
     @GetMapping("/faqs")
-    public String showFAQsPage() { return "faqs"; }
+    public String showFAQsPage() {
+        return "faqs";
+    }
 
     @GetMapping("/help")
-    public String showHelpPage() { return "help"; }
+    public String showHelpPage() {
+        return "help";
+    }
 
     @GetMapping("/login")
     public String showLoginForm() {

@@ -1,0 +1,360 @@
+/* --- МОБИЛНА АДАПТАЦИЯ (САМО ТЕЛЕФОНИ И ТАБЛЕТИ) --- */
+
+@media (max-width: 992px) {
+    .transparent-header {
+        padding: 12px 14px;
+        gap: 8px;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+    }
+
+    .logo-container {
+        flex-shrink: 0;
+    }
+
+    .logo-container img {
+        height: 36px;
+        width: auto;
+    }
+
+    .header-right-wrapper {
+        gap: 6px;
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 4px;
+    }
+
+    .social-circle {
+        width: 28px;
+        height: 28px;
+        font-size: 0.78rem;
+    }
+
+    .search-form {
+        width: 32px;
+        height: 32px;
+    }
+
+    .search-form:hover,
+    .search-form:focus-within {
+        width: 125px;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .search-input {
+        padding-left: 10px;
+        padding-right: 32px;
+        font-size: 0.82rem;
+    }
+
+    .search-submit-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .search-results {
+        width: 230px;
+        right: -36px;
+    }
+
+    .hamburger {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.45rem;
+        padding: 4px 6px;
+        flex-shrink: 0;
+    }
+
+    .nav-center-wrapper {
+        position: static;
+        transform: none;
+    }
+
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        position: fixed;
+        top: 58px;
+        left: 0;
+        width: 100%;
+        max-height: calc(100vh - 58px);
+        overflow-y: auto;
+        background: rgba(20, 20, 20, 0.97);
+        backdrop-filter: blur(10px);
+        padding: 20px 14px 28px;
+        box-sizing: border-box;
+        z-index: 9998;
+    }
+
+    #nav-menu.active {
+        display: flex;
+    }
+
+    #nav-menu > a {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    .dropdown-menu-container {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dots-btn {
+        display: none;
+    }
+
+    .dropdown-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: static;
+        transform: none;
+        background: transparent;
+        backdrop-filter: none;
+        box-shadow: none;
+        border: none;
+        padding: 6px 0 0;
+        min-width: 0;
+    }
+
+    .dropdown-content a {
+        color: #ffffff;
+        padding: 8px 14px;
+        font-size: 0.98rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-logo-img {
+        max-width: 88vw;
+    }
+
+    .hero-section {
+        height: 82vh;
+        min-height: 480px;
+        padding: 0;
+    }
+
+    .hero-wrapper {
+        padding-bottom: 36px;
+        box-sizing: border-box;
+    }
+
+    .btn-hero-book {
+        font-size: 16px;
+        padding: 12px 26px;
+    }
+
+    /* За нас */
+    .about-section {
+        min-height: auto;
+        padding: 60px 0;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 28px;
+        width: 90%;
+    }
+
+    .about-image {
+        justify-content: center;
+    }
+
+    .about-image img {
+        width: 75%;
+        max-width: 260px;
+        border-radius: 12px;
+    }
+
+    .about-text {
+        padding: 0 6px;
+        box-sizing: border-box;
+    }
+
+    .about-text p {
+        text-align: left;
+    }
+
+    /* Услуги */
+    .services-section {
+        padding: 60px 16px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-top: 28px;
+    }
+
+    .service-card {
+        padding: 28px 20px;
+    }
+
+/* Ценоразпис */
+    .prices-section {
+        height: auto;
+        min-height: auto;
+        padding: 50px 10px;
+        overflow: visible;
+    }
+
+    .prices-section .title-prices-section,
+    .prices-section .section-subtitle {
+        text-align: center !important;
+        padding-right: 0;
+    }
+
+    .table-container {
+        align-items: center;
+        width: 100%;
+        margin-top: 16px;
+        overflow: visible;
+    }
+
+    .price-table {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        max-height: none !important;
+        height: auto !important;
+        display: table !important;
+        table-layout: fixed !important;
+        overflow: visible !important;
+        border-radius: 14px;
+    }
+
+    .price-table thead {
+        display: table-header-group !important;
+        width: 100%;
+    }
+
+    .price-table tbody {
+        display: table-row-group !important;
+        max-height: none !important;
+        overflow: visible !important;
+        width: 100%;
+    }
+
+    .price-table tbody tr {
+        display: table-row !important;
+        width: 100%;
+    }
+
+    .price-table th:nth-child(1),
+    .price-table td:nth-child(1) {
+        width: 46% !important;
+        text-align: left !important;
+    }
+
+    .price-table th:nth-child(2),
+    .price-table td:nth-child(2) {
+        width: 30% !important;
+        text-align: left !important;
+    }
+
+    .price-table th:nth-child(3),
+    .price-table td:nth-child(3) {
+        width: 24% !important;
+        text-align: center !important;
+    }
+
+    .price-table th,
+    .price-table td {
+        padding: 10px 6px !important;
+        font-size: 0.74rem !important;
+        line-height: 1.35 !important;
+        overflow-wrap: break-word;
+        word-break: normal;
+        box-sizing: border-box;
+    }
+
+    .price-table td {
+        max-width: 0;
+        word-wrap: break-word;
+    }
+
+    .price-table .price-val {
+        white-space: normal !important;
+        font-size: 0.72rem !important;
+        text-align: right !important;
+        padding-right: 8px !important;
+    }
+
+    .table-container p {
+        text-align: center !important;
+        padding-right: 0;
+        margin-top: 14px;
+        font-size: 12px;
+    }
+
+    /* Галерия */
+    .gallery-section {
+        padding: 60px 16px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-top: 28px;
+    }
+
+    .flip-card {
+        height: 220px;
+    }
+
+    .flip-card:active .flip-card-inner,
+    .flip-card:focus-within .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    /* Отзиви — остават въртящи се хоризонтално като брандовете */
+    .reviews-section {
+        overflow: hidden;
+        padding: 50px 0;
+    }
+
+    .reviews-section .title,
+    .reviews-section .section-subtitle {
+        margin-bottom: 12px;
+    }
+
+    .reviews-grid {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        width: max-content;
+        animation: scrollReviews 35s linear infinite;
+    }
+
+    .review-card {
+        width: 300px !important;
+        max-width: 82vw;
+        box-sizing: border-box;
+        padding: 22px 18px;
+        border-radius: 16px;
+        flex-shrink: 0;
+    }
+
+    /* Партньори и футър */
+    .partners-section {
+        padding: 48px 0;
+    }
+
+    .partner-brand {
+        width: 135px;
+        height: 80px;
+        padding: 10px;
+    }
+
+    footer a {
+        line-height: 1.9;
+    }
+}

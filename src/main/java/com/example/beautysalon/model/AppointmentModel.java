@@ -18,18 +18,43 @@ public class AppointmentModel {
         this.time = time;
     }
 
-    public String getClientName() { return clientName; }
-    public void setClientName(String clientName) { this.clientName = clientName; }
+    public String getClientName() {
+        return clientName;
+    }
 
-    public String getClientPhone() { return clientPhone; }
-    public void setClientPhone(String clientPhone) { this.clientPhone = clientPhone; }
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
+    }
 
-    public String getSelectedService() { return selectedService; }
-    public void setSelectedService(String selectedService) { this.selectedService = selectedService; }
+    public String getClientPhone() {
+        return clientPhone;
+    }
 
-    public String getDate() { return date; }
-    public void setDate(String date) { this.date = date; }
+    public void setClientPhone(String clientPhone) {
+        this.clientPhone = clientPhone;
+    }
 
-    public String getTime() { return time; }
-    public void setTime(String time) { this.time = time; }
+    public String getSelectedService() {
+        return selectedService;
+    }
+
+    public void setSelectedService(String selectedService) {
+        this.selectedService = selectedService;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 }

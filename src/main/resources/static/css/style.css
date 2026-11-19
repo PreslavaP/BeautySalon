@@ -19,3 +19,6 @@
 @import url('help.css');
 @import url('faqs.css');
 @import url('general-services.css');
+
+/* --- МОБИЛНИ СТИЛОВЕ --- */
+@import url('mobile-style.css');

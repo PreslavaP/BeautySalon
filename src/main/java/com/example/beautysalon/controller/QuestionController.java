@@ -1,54 +1,97 @@
 package com.example.beautysalon.controller;
 
-import jakarta.mail.MessagingException;
-import jakarta.mail.internet.MimeMessage;
+import com.example.beautysalon.service.QuestionMailService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.util.Set;
+import java.util.UUID;
+
 @Controller
 public class QuestionController {
 
+    private static final Set<String> ALLOWED_IMAGE_TYPES = Set.of(
+            "image/jpeg", "image/png", "image/webp", "image/gif"
+    );
+    private static final long MAX_IMAGE_SIZE = 5L * 1024 * 1024; // 5 MB
+
     @Autowired
-    private JavaMailSender mailSender;
+    private QuestionMailService questionMailService;
 
     @PostMapping("/send-question")
-    public String sendQuestion(
+    public ResponseEntity<String> sendQuestion(
             @RequestParam("name") String name,
             @RequestParam("email") String email,
             @RequestParam("message") String messageText,
             @RequestParam(value = "image", required = false) MultipartFile image) {
 
         try {
-            MimeMessage message = mailSender.createMimeMessage();
-            MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
-
-            helper.setFrom("aesthetinformation@gmail.com");
-            helper.setTo("aesthetinformation@gmail.com");
-            helper.setReplyTo(email);
-            helper.setSubject("BeautySalonQuestionForm: " + name);
-
-            String body = "Име: " + name + "\n" +
-                    "Имейл: " + email + "\n\n" +
-                    "Въпрос:\n" + messageText;
-
-            helper.setText(body);
+            byte[] imageBytes = null;
+            String attachmentName = null;
+            String attachmentContentType = null;
 
             if (image != null && !image.isEmpty()) {
-                helper.addAttachment(image.getOriginalFilename(), image);
+                ValidatedImage validated = validateImage(image);
+                imageBytes = validated.bytes();
+                attachmentName = validated.safeName();
+                attachmentContentType = validated.contentType();
             }
 
-            mailSender.send(message);
+            questionMailService.sendQuestionEmailAsync(
+                    name, email, messageText, imageBytes, attachmentName, attachmentContentType
+            );
 
-        } catch (MessagingException e) {
+            return ResponseEntity.ok("OK");
+
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (IOException e) {
             e.printStackTrace();
-            return "redirect:/#contacts?error";
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Грешка при обработка на снимката.");
+        }
+    }
+
+    private ValidatedImage validateImage(MultipartFile image) throws IOException {
+        if (image.getSize() > MAX_IMAGE_SIZE) {
+            throw new IllegalArgumentException("Снимката не трябва да надвишава 5 MB.");
         }
 
-        return "redirect:/#contacts?success";
+        String contentType = image.getContentType();
+        if (contentType == null || !ALLOWED_IMAGE_TYPES.contains(contentType.toLowerCase())) {
+            throw new IllegalArgumentException("Позволени са само снимки (JPG, JPEG, PNG, WEBP, GIF).");
+        }
+
+        byte[] bytes = image.getBytes();
+        String lowerType = contentType.toLowerCase();
+
+        if (!"image/webp".equals(lowerType)) {
+            BufferedImage bufferedImage = ImageIO.read(new ByteArrayInputStream(bytes));
+            if (bufferedImage == null) {
+                throw new IllegalArgumentException("Файлът не е валидна снимка.");
+            }
+        }
+
+        String extension = switch (lowerType) {
+            case "image/png" -> ".png";
+            case "image/webp" -> ".webp";
+            case "image/gif" -> ".gif";
+            default -> ".jpg";
+        };
+
+        String safeName = "question-" + UUID.randomUUID() + extension;
+        return new ValidatedImage(bytes, safeName, lowerType);
+    }
+
+    private record ValidatedImage(byte[] bytes, String safeName, String contentType) {
     }
 }
