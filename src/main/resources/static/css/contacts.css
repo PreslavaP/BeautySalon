@@ -134,12 +134,17 @@
  }
 
  .subscribe-input-group {
-     display: flex;
-     align-items: center;
-     gap: 12px;
-     padding: 8px 0;
-     border-bottom: 1px solid #ffffff;
-     margin-bottom: 20px;
+     width: 100%;
+     padding: 12px 15px;
+     margin-bottom: 15px;
+     background-color: rgba(255,255,255,0.05);
+     border: 1px solid rgba(255,255,255,0.1);
+     border-radius: 8px;
+     color: #ffffff;
+     outline: none;
+     font-family: 'Montserrat', sans-serif;
+     font-size: 15px;
+     font-weight: 400;
  }
 
  .subscribe-input-group i {

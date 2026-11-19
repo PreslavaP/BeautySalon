@@ -134,6 +134,7 @@
 @media (max-width: 768px) {
     .intro-logo-img {
         max-width: 88vw;
+        transform: translateY(-50px);
     }
 
     .hero-section {
