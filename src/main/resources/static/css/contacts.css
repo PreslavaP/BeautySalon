@@ -139,7 +139,7 @@
      margin-bottom: 15px;
      background-color: rgba(255,255,255,0.05);
      border: 1px solid rgba(255,255,255,0.1);
-     border-radius: 8px;
+     border-radius: 30px;
      color: #ffffff;
      outline: none;
      font-family: 'Montserrat', sans-serif;
@@ -206,7 +206,7 @@
      padding: 12px 15px;
      background-color: rgba(255,255,255,0.05);
      border: 1px solid rgba(255,255,255,0.1);
-     border-radius: 8px;
+     border-radius: 30px;
      color: #ffffff;
      outline: none;
      font-family: 'Montserrat', sans-serif;
@@ -250,7 +250,7 @@
      background-color: #ffffff;
      color: #26140C;
      padding: 10px 18px;
-     border-radius: 6px;
+     border-radius: 30px;
      cursor: pointer;
      font-weight: 600;
      font-family: 'Montserrat', sans-serif;
@@ -275,7 +275,7 @@
      color: #ffffff;
      border: none;
      padding: 12px;
-     border-radius: 8px;
+     border-radius: 30px;
      font-family: 'Montserrat', sans-serif;
      font-size: 15px;
      font-weight: 600;

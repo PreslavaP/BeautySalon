@@ -8,7 +8,7 @@ body {
 
 .services-hero {
     background: linear-gradient(to bottom, #8C8889 0%, #ffffff 100%);
-    min-height: 220px;
+    min-height: 100vh;
     padding: 40px 20px;
     display: flex;
     justify-content: center;

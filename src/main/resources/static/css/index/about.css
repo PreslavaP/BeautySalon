@@ -37,11 +37,26 @@
 
 .about-image img {
     display: block;
-    width: 350px;
-    max-width: 350px;
-    height: auto;
+    max-width: 550px;
+    max-height: 100%;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     vertical-align: bottom;
+}
+#about .about-image {
+    opacity: 0;
+    transition: opacity 0.9s ease-out;
+    will-change: opacity;
+}
+
+#about .about-text {
+    opacity: 0;
+    transition: opacity 0.9s ease-out 0.15s;
+    will-change: opacity;
+}
+
+#about .about-image.is-visible,
+#about .about-text.is-visible {
+    opacity: 1;
 }

@@ -14,11 +14,16 @@
 @import url('index/reviews.css');
 @import url('index/partners.css');
 
+/* --- 3. ПРОДУКТИ, ЕКИП И ОБУЧЕНИЯ --- */
+@import url('products.css');
+@import url('team.css');
+@import url('trainings.css');
+
 /* --- №. Общи условия и Политика за личните данни --- */
 @import url('privacy-policy.css');
 @import url('help.css');
 @import url('faqs.css');
 @import url('general-services.css');
 
-/* --- МОБИЛНИ СТИЛОВЕ --- */
+/* --- №. МОБИЛНИ СТИЛОВЕ --- */
 @import url('mobile-style.css');

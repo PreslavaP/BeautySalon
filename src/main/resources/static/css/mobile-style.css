@@ -101,33 +101,63 @@
         font-size: 1rem;
     }
 
+    .dots-btn {
+        display: none !important;
+    }
+
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        position: fixed;
+        top: 58px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 58px);
+        overflow-y: auto;
+        background: #ffffff !important;
+        backdrop-filter: none;
+        padding: 20px 14px 32px;
+        box-sizing: border-box;
+        z-index: 9998;
+    }
+
+    #nav-menu.active {
+        display: flex;
+    }
+
+    #nav-menu > a {
+        color: #111111 !important;
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
     .dropdown-menu-container {
         width: 100%;
         text-align: center;
     }
 
-    .dots-btn {
-        display: none;
-    }
-
     .dropdown-content {
-        display: flex;
+        display: flex !important;
         flex-direction: column;
         align-items: center;
-        position: static;
-        transform: none;
-        background: transparent;
+        position: static !important;
+        transform: none !important;
+        background: transparent !important;
         backdrop-filter: none;
-        box-shadow: none;
+        box-shadow: none !important;
         border: none;
-        padding: 6px 0 0;
+        padding: 0;
         min-width: 0;
+        width: 100%;
+        gap: 8px;
     }
 
     .dropdown-content a {
-        color: #ffffff;
+        color: #111111 !important;
         padding: 8px 14px;
-        font-size: 0.98rem;
+        font-size: 1rem;
     }
 }
 
@@ -160,7 +190,7 @@
     }
 
     .about-container {
-        flex-direction: column;
+        flex-direction: row;
         gap: 28px;
         width: 90%;
     }
@@ -210,6 +240,7 @@
     .prices-section .title-prices-section,
     .prices-section .section-subtitle {
         text-align: center !important;
+        color: #ffffff !important;
         padding-right: 0;
     }
 

@@ -1,0 +1,31 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333333;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+
+.section-trainings {
+    background: linear-gradient(to bottom, #8C8889 0%, #ffffff 100%);
+    min-height: 100vh;
+    padding: 120px 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    border: none;
+    box-shadow: none;
+}
+
+.section-trainings h1 {
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #111111;
+    text-transform: uppercase;
+    margin: 0;
+    font-family: 'Impact', sans-serif;
+}

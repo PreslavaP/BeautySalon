@@ -443,3 +443,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const aboutItems = document.querySelectorAll("#about .about-image, #about .about-text");
+    if (!aboutItems.length) return;
+
+    const aboutObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                } else {
+                    entry.target.classList.remove("is-visible");
+                }
+            });
+        },
+        {
+            threshold: 0.20,
+            rootMargin: "0px 0px -40px 0px"
+        }
+    );
+
+    aboutItems.forEach((item) => aboutObserver.observe(item));
+});
